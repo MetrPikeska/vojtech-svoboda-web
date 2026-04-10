@@ -4,6 +4,7 @@ import { useRef } from "react";
 import Image from "next/image";
 import { motion, useInView } from "framer-motion";
 import { Target, BarChart2, Brain } from "lucide-react";
+import { useIsMobile } from "@/lib/hooks";
 
 const values = [
   {
@@ -39,13 +40,14 @@ const fadeUp = {
 export default function About() {
   const ref = useRef<HTMLDivElement>(null);
   const inView = useInView(ref, { once: true, margin: "-80px" });
+  const isMobile = useIsMobile();
 
   return (
     <section
       id="o-mne"
       ref={ref}
       style={{
-        padding: "7rem 2rem",
+        padding: isMobile ? "4rem 1.25rem" : "7rem 2rem",
         background: "#FAFAF8",
         maxWidth: 1200,
         margin: "0 auto",

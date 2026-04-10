@@ -17,6 +17,7 @@ const fadeUp = {
 
 export default function Projects() {
   const ref = useRef<HTMLDivElement>(null);
+  const isMobile = useIsMobile();
   const inView = useInView(ref, { once: true, margin: "-80px" });
 
   const [featured, ...rest] = projects;
@@ -25,7 +26,7 @@ export default function Projects() {
     <section
       id="projekty"
       style={{
-        padding: "7rem 2rem",
+        padding: isMobile ? "4rem 1.25rem" : "7rem 2rem",
         background: "#FAFAF8",
       }}
     >

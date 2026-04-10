@@ -3,6 +3,7 @@
 import { useRef } from "react";
 import { motion, useInView } from "framer-motion";
 import { skillGroups } from "@/lib/data";
+import { useIsMobile } from "@/lib/hooks";
 import { Globe, Code2, Database, MapPin, Layers } from "lucide-react";
 
 const groupIcons = [Globe, Code2, Database, MapPin, Layers];
@@ -18,13 +19,14 @@ const fadeUp = {
 
 export default function Skills() {
   const ref = useRef<HTMLDivElement>(null);
+  const isMobile = useIsMobile();
   const inView = useInView(ref, { once: true, margin: "-80px" });
 
   return (
     <section
       id="dovednosti"
       style={{
-        padding: "7rem 2rem",
+        padding: isMobile ? "4rem 1.25rem" : "7rem 2rem",
         background: "#F2F1EE",
         borderTop: "1px solid #E4E2DC",
         borderBottom: "1px solid #E4E2DC",

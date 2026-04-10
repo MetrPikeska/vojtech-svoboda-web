@@ -3,6 +3,7 @@
 import { useRef } from "react";
 import { motion, useInView } from "framer-motion";
 import { awards, education, courses } from "@/lib/data";
+import { useIsMobile } from "@/lib/hooks";
 
 const fadeUp = {
   hidden: { opacity: 0, y: 24 },
@@ -15,13 +16,14 @@ const fadeUp = {
 
 export default function Awards() {
   const ref = useRef<HTMLDivElement>(null);
+  const isMobile = useIsMobile();
   const inView = useInView(ref, { once: true, margin: "-60px" });
 
   return (
     <section
       id="oceneni"
       style={{
-        padding: "7rem 2rem",
+        padding: isMobile ? "4rem 1.25rem" : "7rem 2rem",
         background: "#F2F1EE",
         borderTop: "1px solid #E4E2DC",
       }}

@@ -3,6 +3,7 @@
 import { useRef, useState } from "react";
 import { motion, useInView } from "framer-motion";
 import { Mail, ExternalLink, Send } from "lucide-react";
+import { useIsMobile } from "@/lib/hooks";
 
 const fadeUp = {
   hidden: { opacity: 0, y: 24 },
@@ -28,6 +29,7 @@ const inputStyle: React.CSSProperties = {
 
 export default function Contact() {
   const ref = useRef<HTMLDivElement>(null);
+  const isMobile = useIsMobile();
   const inView = useInView(ref, { once: true, margin: "-80px" });
   const [form, setForm] = useState({ name: "", email: "", message: "" });
 
@@ -46,7 +48,7 @@ export default function Contact() {
     <section
       id="kontakt"
       style={{
-        padding: "7rem 2rem",
+        padding: isMobile ? "4rem 1.25rem" : "7rem 2rem",
         background: "#1C3A2F",
         position: "relative",
         overflow: "hidden",

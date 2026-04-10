@@ -46,11 +46,11 @@ export default function Hero() {
           zIndex: 10,
           maxWidth: 1200,
           margin: "0 auto",
-          padding: "8rem 2rem 6rem",
+          padding: isMobile ? "6rem 1.25rem 4rem" : "8rem 2rem 6rem",
           width: "100%",
           display: "grid",
-          gridTemplateColumns: "1fr auto",
-          gap: "4rem",
+          gridTemplateColumns: isMobile ? "1fr" : "1fr auto",
+          gap: "3rem",
           alignItems: "center",
         }}
       >
@@ -212,13 +212,12 @@ export default function Hero() {
           </motion.div>
         </div>
 
-        {/* Right: photo — hidden on small screens via inline media workaround */}
-        <motion.div
+        {/* Right: photo — hidden on mobile */}
+        {!isMobile && <motion.div
           custom={4}
           variants={fadeUp}
           initial="hidden"
           animate="visible"
-          className="hidden lg:block"
           style={{
             position: "relative",
             flexShrink: 0,
@@ -268,7 +267,7 @@ export default function Hero() {
               zIndex: -1,
             }}
           />
-        </motion.div>
+        </motion.div>}
 
         {/* Scroll indicator */}
         <motion.div
