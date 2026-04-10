@@ -1,6 +1,7 @@
 "use client";
 
 import { useRef } from "react";
+import Image from "next/image";
 import { motion, useInView } from "framer-motion";
 import { Target, BarChart2, Brain } from "lucide-react";
 
@@ -101,35 +102,25 @@ export default function About() {
               marginBottom: "2rem",
             }}
           >
-            {/* Photo placeholder */}
             <div
               style={{
                 width: 96,
                 height: 96,
                 borderRadius: "50%",
-                background: "linear-gradient(135deg, #EBF0EC 0%, #C8D8CC 100%)",
                 flexShrink: 0,
-                display: "flex",
-                alignItems: "center",
-                justifyContent: "center",
                 border: "2px solid #D4DDD6",
                 position: "relative",
                 overflow: "hidden",
+                background: "#EBF0EC",
               }}
-              aria-label="Fotografie Vojtěcha Svobody"
-              role="img"
             >
-              <span
-                style={{
-                  fontFamily: "var(--font-display), Playfair Display, Georgia, serif",
-                  fontSize: "1.5rem",
-                  fontWeight: 500,
-                  color: "#1C3A2F",
-                  opacity: 0.7,
-                }}
-              >
-                VS
-              </span>
+              <Image
+                src="/hero_foto.jpeg"
+                alt="Vojtěch Svoboda"
+                fill
+                style={{ objectFit: "cover", objectPosition: "center top" }}
+                sizes="96px"
+              />
             </div>
 
             <div>

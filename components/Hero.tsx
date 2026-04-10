@@ -1,6 +1,8 @@
 "use client";
 
+import Image from "next/image";
 import { motion } from "framer-motion";
+import { useIsMobile } from "@/lib/hooks";
 
 const fadeUp = {
   hidden: { opacity: 0, y: 24 },
@@ -12,6 +14,7 @@ const fadeUp = {
 };
 
 export default function Hero() {
+  const isMobile = useIsMobile(1024);
   return (
     <section
       id="hero"
@@ -24,10 +27,8 @@ export default function Hero() {
         overflow: "hidden",
       }}
     >
-      {/* Contour lines SVG background */}
       <ContourBackground />
 
-      {/* Gradient vignette */}
       <div
         aria-hidden
         style={{
@@ -47,177 +48,226 @@ export default function Hero() {
           margin: "0 auto",
           padding: "8rem 2rem 6rem",
           width: "100%",
+          display: "grid",
+          gridTemplateColumns: "1fr auto",
+          gap: "4rem",
+          alignItems: "center",
         }}
       >
-        {/* Eyebrow */}
-        <motion.p
-          custom={0}
+        {/* Left: text content */}
+        <div>
+          <motion.p
+            custom={0}
+            variants={fadeUp}
+            initial="hidden"
+            animate="visible"
+            style={{
+              fontSize: "0.8125rem",
+              fontWeight: 600,
+              letterSpacing: "0.12em",
+              textTransform: "uppercase",
+              color: "#1C3A2F",
+              marginBottom: "1.5rem",
+              display: "flex",
+              alignItems: "center",
+              gap: "0.5rem",
+            }}
+          >
+            <span
+              style={{
+                display: "inline-block",
+                width: 28,
+                height: 1.5,
+                backgroundColor: "#1C3A2F",
+                flexShrink: 0,
+              }}
+            />
+            Geoinformatik · Prostorová data · Kartografie
+          </motion.p>
+
+          <motion.h1
+            custom={1}
+            variants={fadeUp}
+            initial="hidden"
+            animate="visible"
+            style={{
+              fontFamily: "var(--font-display), Playfair Display, Georgia, serif",
+              fontSize: "clamp(3rem, 8vw, 6.5rem)",
+              fontWeight: 500,
+              lineHeight: 1.05,
+              color: "#1A1A18",
+              letterSpacing: "-0.02em",
+              marginBottom: "2rem",
+              maxWidth: "14ch",
+            }}
+          >
+            Vojtěch{" "}
+            <em style={{ fontStyle: "italic", color: "#1C3A2F" }}>Svoboda</em>
+          </motion.h1>
+
+          <motion.p
+            custom={2}
+            variants={fadeUp}
+            initial="hidden"
+            animate="visible"
+            style={{
+              fontSize: "clamp(1rem, 2vw, 1.1875rem)",
+              color: "#6B6860",
+              lineHeight: 1.7,
+              maxWidth: "52ch",
+              marginBottom: "3rem",
+            }}
+          >
+            MSc student geoinformatiky na UPOL. Pracuji s prostorovými daty, GIS
+            analýzou a kartografickou vizualizací. Hledám zajímavé projekty a
+            spolupráci.
+          </motion.p>
+
+          <motion.div
+            custom={3}
+            variants={fadeUp}
+            initial="hidden"
+            animate="visible"
+            style={{ display: "flex", gap: "1rem", flexWrap: "wrap" }}
+          >
+            <a
+              href="#projekty"
+              onClick={(e) => {
+                e.preventDefault();
+                document
+                  .querySelector("#projekty")
+                  ?.scrollIntoView({ behavior: "smooth" });
+              }}
+              style={{
+                display: "inline-flex",
+                alignItems: "center",
+                gap: "0.5rem",
+                backgroundColor: "#1C3A2F",
+                color: "#FAFAF8",
+                padding: "0.875rem 2rem",
+                borderRadius: 8,
+                fontSize: "0.9375rem",
+                fontWeight: 500,
+                textDecoration: "none",
+                transition: "background 0.2s, transform 0.2s",
+                letterSpacing: "0.01em",
+              }}
+              onMouseEnter={(e) => {
+                (e.currentTarget as HTMLElement).style.backgroundColor = "#2D5C48";
+                (e.currentTarget as HTMLElement).style.transform = "translateY(-1px)";
+              }}
+              onMouseLeave={(e) => {
+                (e.currentTarget as HTMLElement).style.backgroundColor = "#1C3A2F";
+                (e.currentTarget as HTMLElement).style.transform = "translateY(0)";
+              }}
+            >
+              Projekty
+              <svg width="16" height="16" viewBox="0 0 16 16" fill="none" aria-hidden>
+                <path
+                  d="M3 8h10M9 4l4 4-4 4"
+                  stroke="currentColor"
+                  strokeWidth="1.5"
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                />
+              </svg>
+            </a>
+
+            <a
+              href="#kontakt"
+              onClick={(e) => {
+                e.preventDefault();
+                document
+                  .querySelector("#kontakt")
+                  ?.scrollIntoView({ behavior: "smooth" });
+              }}
+              style={{
+                display: "inline-flex",
+                alignItems: "center",
+                gap: "0.5rem",
+                backgroundColor: "transparent",
+                color: "#1A1A18",
+                padding: "0.875rem 2rem",
+                borderRadius: 8,
+                fontSize: "0.9375rem",
+                fontWeight: 500,
+                textDecoration: "none",
+                border: "1.5px solid #C8C4BC",
+                transition: "border-color 0.2s, color 0.2s, transform 0.2s",
+                letterSpacing: "0.01em",
+              }}
+              onMouseEnter={(e) => {
+                (e.currentTarget as HTMLElement).style.borderColor = "#1C3A2F";
+                (e.currentTarget as HTMLElement).style.color = "#1C3A2F";
+                (e.currentTarget as HTMLElement).style.transform = "translateY(-1px)";
+              }}
+              onMouseLeave={(e) => {
+                (e.currentTarget as HTMLElement).style.borderColor = "#C8C4BC";
+                (e.currentTarget as HTMLElement).style.color = "#1A1A18";
+                (e.currentTarget as HTMLElement).style.transform = "translateY(0)";
+              }}
+            >
+              Kontakt
+            </a>
+          </motion.div>
+        </div>
+
+        {/* Right: photo — hidden on small screens via inline media workaround */}
+        <motion.div
+          custom={4}
           variants={fadeUp}
           initial="hidden"
           animate="visible"
+          className="hidden lg:block"
           style={{
-            fontSize: "0.8125rem",
-            fontWeight: 600,
-            letterSpacing: "0.12em",
-            textTransform: "uppercase",
-            color: "#1C3A2F",
-            marginBottom: "1.5rem",
-            display: "flex",
-            alignItems: "center",
-            gap: "0.5rem",
+            position: "relative",
+            flexShrink: 0,
           }}
         >
-          <span
+          <div
             style={{
-              display: "inline-block",
-              width: 28,
-              height: 1.5,
-              backgroundColor: "#1C3A2F",
-              flexShrink: 0,
+              width: 320,
+              height: 380,
+              borderRadius: 24,
+              overflow: "hidden",
+              border: "1px solid #E4E2DC",
+              position: "relative",
+              background: "#EBF0EC",
+            }}
+          >
+            <Image
+              src="/hero_foto.jpeg"
+              alt="Vojtěch Svoboda"
+              fill
+              style={{ objectFit: "cover", objectPosition: "center top" }}
+              priority
+              sizes="320px"
+            />
+            {/* Subtle overlay */}
+            <div
+              aria-hidden
+              style={{
+                position: "absolute",
+                inset: 0,
+                background:
+                  "linear-gradient(to bottom, transparent 60%, rgba(28,58,47,0.08) 100%)",
+              }}
+            />
+          </div>
+          {/* Decorative border offset */}
+          <div
+            aria-hidden
+            style={{
+              position: "absolute",
+              top: 12,
+              left: 12,
+              width: 320,
+              height: 380,
+              borderRadius: 24,
+              border: "1px solid #C8D8CC",
+              zIndex: -1,
             }}
           />
-          Geoinformatik · Prostorová data · Kartografie
-        </motion.p>
-
-        {/* Main heading */}
-        <motion.h1
-          custom={1}
-          variants={fadeUp}
-          initial="hidden"
-          animate="visible"
-          style={{
-            fontFamily: "var(--font-display), Playfair Display, Georgia, serif",
-            fontSize: "clamp(3rem, 8vw, 6.5rem)",
-            fontWeight: 500,
-            lineHeight: 1.05,
-            color: "#1A1A18",
-            letterSpacing: "-0.02em",
-            marginBottom: "2rem",
-            maxWidth: "14ch",
-          }}
-        >
-          Vojtěch{" "}
-          <em style={{ fontStyle: "italic", color: "#1C3A2F" }}>Svoboda</em>
-        </motion.h1>
-
-        {/* Perex */}
-        <motion.p
-          custom={2}
-          variants={fadeUp}
-          initial="hidden"
-          animate="visible"
-          style={{
-            fontSize: "clamp(1rem, 2vw, 1.1875rem)",
-            color: "#6B6860",
-            lineHeight: 1.7,
-            maxWidth: "52ch",
-            marginBottom: "3rem",
-          }}
-        >
-          MSc student geoinformatiky na UPOL. Pracuji s prostorovými daty, GIS
-          analýzou a kartografickou vizualizací. Hledám zajímavé projekty a
-          spolupráci.
-        </motion.p>
-
-        {/* CTAs */}
-        <motion.div
-          custom={3}
-          variants={fadeUp}
-          initial="hidden"
-          animate="visible"
-          style={{ display: "flex", gap: "1rem", flexWrap: "wrap" }}
-        >
-          <a
-            href="#projekty"
-            onClick={(e) => {
-              e.preventDefault();
-              document
-                .querySelector("#projekty")
-                ?.scrollIntoView({ behavior: "smooth" });
-            }}
-            style={{
-              display: "inline-flex",
-              alignItems: "center",
-              gap: "0.5rem",
-              backgroundColor: "#1C3A2F",
-              color: "#FAFAF8",
-              padding: "0.875rem 2rem",
-              borderRadius: 8,
-              fontSize: "0.9375rem",
-              fontWeight: 500,
-              textDecoration: "none",
-              transition: "background 0.2s, transform 0.2s",
-              letterSpacing: "0.01em",
-            }}
-            onMouseEnter={(e) => {
-              (e.currentTarget as HTMLElement).style.backgroundColor =
-                "#2D5C48";
-              (e.currentTarget as HTMLElement).style.transform =
-                "translateY(-1px)";
-            }}
-            onMouseLeave={(e) => {
-              (e.currentTarget as HTMLElement).style.backgroundColor =
-                "#1C3A2F";
-              (e.currentTarget as HTMLElement).style.transform =
-                "translateY(0)";
-            }}
-          >
-            Projekty
-            <svg
-              width="16"
-              height="16"
-              viewBox="0 0 16 16"
-              fill="none"
-              aria-hidden
-            >
-              <path
-                d="M3 8h10M9 4l4 4-4 4"
-                stroke="currentColor"
-                strokeWidth="1.5"
-                strokeLinecap="round"
-                strokeLinejoin="round"
-              />
-            </svg>
-          </a>
-
-          <a
-            href="#kontakt"
-            onClick={(e) => {
-              e.preventDefault();
-              document
-                .querySelector("#kontakt")
-                ?.scrollIntoView({ behavior: "smooth" });
-            }}
-            style={{
-              display: "inline-flex",
-              alignItems: "center",
-              gap: "0.5rem",
-              backgroundColor: "transparent",
-              color: "#1A1A18",
-              padding: "0.875rem 2rem",
-              borderRadius: 8,
-              fontSize: "0.9375rem",
-              fontWeight: 500,
-              textDecoration: "none",
-              border: "1.5px solid #C8C4BC",
-              transition: "border-color 0.2s, color 0.2s, transform 0.2s",
-              letterSpacing: "0.01em",
-            }}
-            onMouseEnter={(e) => {
-              (e.currentTarget as HTMLElement).style.borderColor = "#1C3A2F";
-              (e.currentTarget as HTMLElement).style.color = "#1C3A2F";
-              (e.currentTarget as HTMLElement).style.transform =
-                "translateY(-1px)";
-            }}
-            onMouseLeave={(e) => {
-              (e.currentTarget as HTMLElement).style.borderColor = "#C8C4BC";
-              (e.currentTarget as HTMLElement).style.color = "#1A1A18";
-              (e.currentTarget as HTMLElement).style.transform =
-                "translateY(0)";
-            }}
-          >
-            Kontakt
-          </a>
         </motion.div>
 
         {/* Scroll indicator */}
@@ -250,11 +300,7 @@ export default function Hero() {
           >
             <motion.span
               animate={{ y: ["-100%", "100%"] }}
-              transition={{
-                repeat: Infinity,
-                duration: 1.6,
-                ease: "easeInOut",
-              }}
+              transition={{ repeat: Infinity, duration: 1.6, ease: "easeInOut" }}
               style={{
                 position: "absolute",
                 inset: 0,
@@ -285,14 +331,7 @@ function ContourBackground() {
       viewBox="0 0 1200 800"
       preserveAspectRatio="xMidYMid slice"
     >
-      {/* Contour lines — terrain-inspired */}
-      <g
-        fill="none"
-        stroke="#1C3A2F"
-        strokeWidth="1"
-        strokeLinecap="round"
-      >
-        {/* Outer rings */}
+      <g fill="none" stroke="#1C3A2F" strokeWidth="1" strokeLinecap="round">
         <ellipse cx="700" cy="420" rx="520" ry="340" />
         <ellipse cx="700" cy="420" rx="460" ry="295" />
         <ellipse cx="700" cy="415" rx="400" ry="255" />
@@ -305,7 +344,6 @@ function ContourBackground() {
         <ellipse cx="724" cy="385" rx="96" ry="63" />
         <ellipse cx="725" cy="382" rx="66" ry="45" />
         <ellipse cx="726" cy="380" rx="40" ry="28" />
-        {/* Second peak */}
         <ellipse cx="280" cy="280" rx="340" ry="200" />
         <ellipse cx="285" cy="278" rx="286" ry="168" />
         <ellipse cx="288" cy="276" rx="235" ry="140" />
@@ -314,7 +352,6 @@ function ContourBackground() {
         <ellipse cx="294" cy="270" rx="108" ry="68" />
         <ellipse cx="296" cy="268" rx="74" ry="47" />
         <ellipse cx="297" cy="266" rx="44" ry="29" />
-        {/* Horizontal grid lines subtle */}
         <line x1="0" y1="200" x2="1200" y2="200" strokeWidth="0.5" strokeDasharray="4 16" />
         <line x1="0" y1="400" x2="1200" y2="400" strokeWidth="0.5" strokeDasharray="4 16" />
         <line x1="0" y1="600" x2="1200" y2="600" strokeWidth="0.5" strokeDasharray="4 16" />

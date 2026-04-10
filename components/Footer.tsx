@@ -54,7 +54,7 @@ export default function Footer() {
             style={{ width: 3, height: 3, borderRadius: "50%", backgroundColor: "#4A6050" }}
           />
           <a
-            href="https://linkedin.com/in/vojtěch-svoboda-623956266"
+            href="https://www.linkedin.com/in/vojt%C4%9Bch-svoboda-623956266/"
             target="_blank"
             rel="noopener noreferrer"
             style={{
@@ -71,6 +71,29 @@ export default function Footer() {
             }
           >
             LinkedIn
+          </a>
+          <span
+            aria-hidden
+            style={{ width: 3, height: 3, borderRadius: "50%", backgroundColor: "#4A6050" }}
+          />
+          <a
+            href="https://github.com/SvobVojtech"
+            target="_blank"
+            rel="noopener noreferrer"
+            style={{
+              fontSize: "0.8125rem",
+              color: "#4A6050",
+              textDecoration: "none",
+              transition: "color 0.2s",
+            }}
+            onMouseEnter={(e) =>
+              ((e.target as HTMLElement).style.color = "#A8D4BA")
+            }
+            onMouseLeave={(e) =>
+              ((e.target as HTMLElement).style.color = "#4A6050")
+            }
+          >
+            GitHub
           </a>
         </div>
       </div>

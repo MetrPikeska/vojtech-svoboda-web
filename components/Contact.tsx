@@ -148,8 +148,14 @@ export default function Contact() {
                 {
                   icon: ExternalLink,
                   label: "linkedin.com/in/vojtěch-svoboda",
-                  href: "https://linkedin.com/in/vojtěch-svoboda-623956266",
+                  href: "https://www.linkedin.com/in/vojt%C4%9Bch-svoboda-623956266/",
                   i: 4,
+                },
+                {
+                  icon: ExternalLink,
+                  label: "github.com/SvobVojtech",
+                  href: "https://github.com/SvobVojtech",
+                  i: 5,
                 },
               ].map(({ icon: Icon, label, href, i }) => (
                 <motion.a

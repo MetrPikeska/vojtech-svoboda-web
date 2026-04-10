@@ -3,6 +3,7 @@
 import { useRef } from "react";
 import { motion, useInView } from "framer-motion";
 import { projects } from "@/lib/data";
+import { useIsMobile } from "@/lib/hooks";
 import { ArrowUpRight } from "lucide-react";
 
 const fadeUp = {
@@ -148,24 +149,28 @@ function ProjectCard({
   project: Project;
   featured?: boolean;
 }) {
+  const isMobile = useIsMobile(768);
   const hasLink = !!project.href;
+  const hasMultiLinks = !!(project.links && project.links.length > 0);
+  const clickable = hasLink && !hasMultiLinks;
+  const isRow = featured && !isMobile;
 
   const inner = (
     <motion.article
-      whileHover={hasLink ? { y: -4 } : { y: -2 }}
+      whileHover={{ y: hasLink || hasMultiLinks ? -4 : -2 }}
       transition={{ duration: 0.25, ease: [0.22, 1, 0.36, 1] as [number, number, number, number] }}
       style={{
         background: "#FAFAF8",
         border: "1px solid #E4E2DC",
         borderRadius: 16,
-        padding: featured ? "2.5rem" : "1.75rem",
+        padding: isMobile ? "1.25rem" : featured ? "2.5rem" : "1.75rem",
         height: "100%",
         display: "flex",
-        flexDirection: featured ? ("row" as const) : ("column" as const),
-        gap: featured ? "3rem" : "1rem",
+        flexDirection: isRow ? ("row" as const) : ("column" as const),
+        gap: isRow ? "3rem" : "1rem",
         transition: "box-shadow 0.25s, border-color 0.25s",
-        cursor: hasLink ? "pointer" : "default",
-        alignItems: featured ? "flex-start" : undefined,
+        cursor: clickable ? "pointer" : "default",
+        alignItems: isRow ? "flex-start" : undefined,
         position: "relative",
         overflow: "hidden",
       }}
@@ -209,8 +214,8 @@ function ProjectCard({
       {/* Left / top content */}
       <div
         style={{
-          flex: featured ? "0 0 auto" : undefined,
-          width: featured ? "clamp(200px, 35%, 320px)" : undefined,
+          flex: isRow ? "0 0 auto" : undefined,
+          width: isRow ? "clamp(200px, 35%, 320px)" : undefined,
         }}
       >
         <p
@@ -240,7 +245,7 @@ function ProjectCard({
           {project.title}
         </h3>
 
-        {project.award && featured && (
+        {project.award && isRow && (
           <div
             style={{
               display: "inline-flex",
@@ -263,7 +268,7 @@ function ProjectCard({
 
       {/* Right / bottom content */}
       <div style={{ flex: 1 }}>
-        {project.award && !featured && (
+        {project.award && !isRow && (
           <div
             style={{
               display: "inline-flex",
@@ -300,7 +305,7 @@ function ProjectCard({
             display: "flex",
             flexWrap: "wrap",
             gap: "0.35rem",
-            marginBottom: hasLink ? "1.5rem" : 0,
+            marginBottom: hasLink || hasMultiLinks ? "1.25rem" : 0,
           }}
         >
           {project.tags.map((tag) => (
@@ -322,8 +327,49 @@ function ProjectCard({
           ))}
         </div>
 
-        {/* Link */}
-        {hasLink && (
+        {/* Multi-links */}
+        {hasMultiLinks && (
+          <div style={{ display: "flex", flexWrap: "wrap", gap: "0.5rem" }}>
+            {project.links!.map((link) => (
+              <a
+                key={link.href}
+                href={link.href}
+                target="_blank"
+                rel="noopener noreferrer"
+                onClick={(e) => e.stopPropagation()}
+                style={{
+                  display: "inline-flex",
+                  alignItems: "center",
+                  gap: "0.3rem",
+                  fontSize: "0.8125rem",
+                  fontWeight: 600,
+                  color: "#1C3A2F",
+                  backgroundColor: "#EBF0EC",
+                  border: "1px solid #C8D8CC",
+                  borderRadius: 6,
+                  padding: "0.35rem 0.75rem",
+                  textDecoration: "none",
+                  transition: "background 0.15s, border-color 0.15s",
+                  letterSpacing: "0.01em",
+                }}
+                onMouseEnter={(e) => {
+                  (e.currentTarget as HTMLElement).style.backgroundColor = "#D4E8DA";
+                  (e.currentTarget as HTMLElement).style.borderColor = "#A8C8B4";
+                }}
+                onMouseLeave={(e) => {
+                  (e.currentTarget as HTMLElement).style.backgroundColor = "#EBF0EC";
+                  (e.currentTarget as HTMLElement).style.borderColor = "#C8D8CC";
+                }}
+              >
+                {link.label}
+                <ArrowUpRight size={13} strokeWidth={2} />
+              </a>
+            ))}
+          </div>
+        )}
+
+        {/* Single link */}
+        {clickable && (
           <div
             style={{
               display: "inline-flex",
@@ -343,7 +389,7 @@ function ProjectCard({
     </motion.article>
   );
 
-  if (hasLink) {
+  if (clickable) {
     return (
       <a
         href={project.href!}
