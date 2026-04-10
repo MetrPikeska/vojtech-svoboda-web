@@ -9,7 +9,7 @@ const fadeUp = {
   visible: (i: number) => ({
     opacity: 1,
     y: 0,
-    transition: { delay: i * 0.08, duration: 0.6, ease: [0.22, 1, 0.36, 1] },
+    transition: { delay: i * 0.08, duration: 0.6, ease: [0.22, 1, 0.36, 1] as [number, number, number, number] },
   }),
 };
 
@@ -62,7 +62,7 @@ export default function Awards() {
           initial="hidden"
           animate={inView ? "visible" : "hidden"}
           style={{
-            fontFamily: "Playfair Display, Georgia, serif",
+            fontFamily: "var(--font-display), Playfair Display, Georgia, serif",
             fontSize: "clamp(2rem, 5vw, 3.25rem)",
             fontWeight: 500,
             color: "#1A1A18",

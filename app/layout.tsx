@@ -1,5 +1,21 @@
 import type { Metadata } from "next";
+import { Playfair_Display, DM_Sans } from "next/font/google";
 import "./globals.css";
+
+const playfair = Playfair_Display({
+  variable: "--font-display",
+  subsets: ["latin"],
+  weight: ["400", "500", "600"],
+  style: ["normal", "italic"],
+  display: "swap",
+});
+
+const dmSans = DM_Sans({
+  variable: "--font-body",
+  subsets: ["latin"],
+  weight: ["300", "400", "500", "600"],
+  display: "swap",
+});
 
 export const metadata: Metadata = {
   title: "Vojtěch Svoboda — Geoinformatik & Datový analytik",
@@ -31,8 +47,21 @@ export default function RootLayout({
   children: React.ReactNode;
 }) {
   return (
-    <html lang="cs" className="h-full">
-      <body className="min-h-full flex flex-col">{children}</body>
+    <html
+      lang="cs"
+      className={`${playfair.variable} ${dmSans.variable}`}
+      style={{ scrollBehavior: "smooth" }}
+    >
+      <body
+        style={{
+          fontFamily: "var(--font-body), DM Sans, system-ui, sans-serif",
+          minHeight: "100vh",
+          display: "flex",
+          flexDirection: "column",
+        }}
+      >
+        {children}
+      </body>
     </html>
   );
 }

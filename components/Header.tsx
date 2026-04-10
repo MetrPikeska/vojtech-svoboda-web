@@ -63,7 +63,7 @@ export default function Header() {
             window.scrollTo({ top: 0, behavior: "smooth" });
           }}
           style={{
-            fontFamily: "Playfair Display, Georgia, serif",
+            fontFamily: "var(--font-display), Playfair Display, Georgia, serif",
             fontWeight: 500,
             fontSize: "1.125rem",
             color: "#1A1A18",

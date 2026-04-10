@@ -10,7 +10,7 @@ const fadeUp = {
   visible: (i: number) => ({
     opacity: 1,
     y: 0,
-    transition: { delay: i * 0.1, duration: 0.6, ease: [0.22, 1, 0.36, 1] },
+    transition: { delay: i * 0.1, duration: 0.6, ease: [0.22, 1, 0.36, 1] as [number, number, number, number] },
   }),
 };
 
@@ -74,7 +74,7 @@ export default function Projects() {
             initial="hidden"
             animate={inView ? "visible" : "hidden"}
             style={{
-              fontFamily: "Playfair Display, Georgia, serif",
+              fontFamily: "var(--font-display), Playfair Display, Georgia, serif",
               fontSize: "clamp(2rem, 5vw, 3.25rem)",
               fontWeight: 500,
               color: "#1A1A18",
@@ -153,7 +153,7 @@ function ProjectCard({
   const inner = (
     <motion.article
       whileHover={hasLink ? { y: -4 } : { y: -2 }}
-      transition={{ duration: 0.25, ease: [0.22, 1, 0.36, 1] }}
+      transition={{ duration: 0.25, ease: [0.22, 1, 0.36, 1] as [number, number, number, number] }}
       style={{
         background: "#FAFAF8",
         border: "1px solid #E4E2DC",
@@ -193,7 +193,7 @@ function ProjectCard({
           position: "absolute",
           top: featured ? "1.5rem" : "1.25rem",
           right: featured ? "2rem" : "1.5rem",
-          fontFamily: "Playfair Display, Georgia, serif",
+          fontFamily: "var(--font-display), Playfair Display, Georgia, serif",
           fontSize: featured ? "5rem" : "3.5rem",
           fontWeight: 400,
           color: "#1C3A2F",
@@ -228,7 +228,7 @@ function ProjectCard({
 
         <h3
           style={{
-            fontFamily: "Playfair Display, Georgia, serif",
+            fontFamily: "var(--font-display), Playfair Display, Georgia, serif",
             fontSize: featured ? "clamp(1.375rem, 2.5vw, 1.875rem)" : "1.1875rem",
             fontWeight: 500,
             color: "#1A1A18",

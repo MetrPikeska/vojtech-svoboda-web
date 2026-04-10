@@ -30,7 +30,7 @@ const fadeUp = {
     transition: {
       delay: i * 0.1,
       duration: 0.6,
-      ease: [0.22, 1, 0.36, 1],
+      ease: [0.22, 1, 0.36, 1] as [number, number, number, number],
     },
   }),
 };
@@ -121,7 +121,7 @@ export default function About() {
             >
               <span
                 style={{
-                  fontFamily: "Playfair Display, Georgia, serif",
+                  fontFamily: "var(--font-display), Playfair Display, Georgia, serif",
                   fontSize: "1.5rem",
                   fontWeight: 500,
                   color: "#1C3A2F",
@@ -135,7 +135,7 @@ export default function About() {
             <div>
               <h2
                 style={{
-                  fontFamily: "Playfair Display, Georgia, serif",
+                  fontFamily: "var(--font-display), Playfair Display, Georgia, serif",
                   fontSize: "clamp(1.75rem, 4vw, 2.5rem)",
                   fontWeight: 500,
                   color: "#1A1A18",

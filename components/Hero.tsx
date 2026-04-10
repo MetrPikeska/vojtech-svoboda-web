@@ -7,7 +7,7 @@ const fadeUp = {
   visible: (i: number) => ({
     opacity: 1,
     y: 0,
-    transition: { delay: i * 0.12, duration: 0.65, ease: [0.22, 1, 0.36, 1] },
+    transition: { delay: i * 0.12, duration: 0.65, ease: [0.22, 1, 0.36, 1] as [number, number, number, number] },
   }),
 };
 
@@ -86,7 +86,7 @@ export default function Hero() {
           initial="hidden"
           animate="visible"
           style={{
-            fontFamily: "Playfair Display, Georgia, serif",
+            fontFamily: "var(--font-display), Playfair Display, Georgia, serif",
             fontSize: "clamp(3rem, 8vw, 6.5rem)",
             fontWeight: 500,
             lineHeight: 1.05,
