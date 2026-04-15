@@ -1,16 +1,15 @@
 import type { Metadata } from "next";
-import { Playfair_Display, DM_Sans } from "next/font/google";
+import { Plus_Jakarta_Sans, Inter } from "next/font/google";
 import "./globals.css";
 
-const playfair = Playfair_Display({
+const displayFont = Plus_Jakarta_Sans({
   variable: "--font-display",
   subsets: ["latin", "latin-ext"],
-  weight: ["400", "500", "600"],
-  style: ["normal", "italic"],
+  weight: ["500", "600", "700", "800"],
   display: "swap",
 });
 
-const dmSans = DM_Sans({
+const bodyFont = Inter({
   variable: "--font-body",
   subsets: ["latin", "latin-ext"],
   weight: ["300", "400", "500", "600"],
@@ -52,12 +51,12 @@ export default function RootLayout({
   return (
     <html
       lang="cs"
-      className={`${playfair.variable} ${dmSans.variable}`}
+      className={`${displayFont.variable} ${bodyFont.variable}`}
       style={{ scrollBehavior: "smooth" }}
     >
       <body
         style={{
-          fontFamily: "var(--font-body), DM Sans, system-ui, sans-serif",
+          fontFamily: "var(--font-body), Inter, system-ui, sans-serif",
           minHeight: "100vh",
           display: "flex",
           flexDirection: "column",

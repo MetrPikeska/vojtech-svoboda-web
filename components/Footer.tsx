@@ -34,18 +34,11 @@ export default function Footer() {
         <div style={{ display: "flex", gap: "1.5rem", alignItems: "center" }}>
           <a
             href="mailto:vojttas@gmail.com"
+            className="text-link"
             style={{
               fontSize: "0.8125rem",
-              color: "rgba(248,251,255,0.56)",
-              textDecoration: "none",
-              transition: "color 0.2s",
+              color: "rgba(248,251,255,0.7)",
             }}
-            onMouseEnter={(e) =>
-              ((e.target as HTMLElement).style.color = "var(--color-highlight)")
-            }
-            onMouseLeave={(e) =>
-              ((e.target as HTMLElement).style.color = "rgba(248,251,255,0.56)")
-            }
           >
             vojttas@gmail.com
           </a>
@@ -60,20 +53,13 @@ export default function Footer() {
           />
           <a
             href="https://www.linkedin.com/in/vojt%C4%9Bch-svoboda-623956266/"
+            className="text-link"
             target="_blank"
             rel="noopener noreferrer"
             style={{
               fontSize: "0.8125rem",
-              color: "rgba(248,251,255,0.56)",
-              textDecoration: "none",
-              transition: "color 0.2s",
+              color: "rgba(248,251,255,0.7)",
             }}
-            onMouseEnter={(e) =>
-              ((e.target as HTMLElement).style.color = "var(--color-highlight)")
-            }
-            onMouseLeave={(e) =>
-              ((e.target as HTMLElement).style.color = "rgba(248,251,255,0.56)")
-            }
           >
             LinkedIn
           </a>
@@ -88,20 +74,13 @@ export default function Footer() {
           />
           <a
             href="https://github.com/SvobVojtech"
+            className="text-link"
             target="_blank"
             rel="noopener noreferrer"
             style={{
               fontSize: "0.8125rem",
-              color: "rgba(248,251,255,0.56)",
-              textDecoration: "none",
-              transition: "color 0.2s",
+              color: "rgba(248,251,255,0.7)",
             }}
-            onMouseEnter={(e) =>
-              ((e.target as HTMLElement).style.color = "var(--color-highlight)")
-            }
-            onMouseLeave={(e) =>
-              ((e.target as HTMLElement).style.color = "rgba(248,251,255,0.56)")
-            }
           >
             GitHub
           </a>

@@ -239,9 +239,9 @@ export default function About() {
                   alignItems: "flex-start",
                   padding: "1.5rem",
                   borderRadius: 18,
-                  background: "linear-gradient(180deg, #ffffff, var(--color-surface))",
+                  background: "var(--color-surface)",
                   border: "1px solid var(--color-border)",
-                  boxShadow: "0 16px 40px rgba(7,22,41,0.06)",
+                  boxShadow: "0 16px 40px rgba(0,0,0,0.1)",
                 }}
               >
                 <div

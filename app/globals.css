@@ -1,47 +1,48 @@
 @import "tailwindcss";
 
 @theme {
-  --color-bg: #f4f7fb;
-  --color-surface: #e9eef7;
-  --color-border: #c7d3e2;
-  --color-text: #0f2035;
-  --color-muted: #55657d;
-  --color-accent: #0e7490;
-  --color-accent-strong: #0b4f66;
-  --color-accent-soft: #dff4fb;
-  --color-accent-border: #9fd3e3;
-  --color-chip: #eef7ff;
-  --color-chip-border: #c7dff1;
-  --color-warm: #b8672a;
-  --color-highlight: #ff9b54;
-  --color-highlight-soft: #ffe7d6;
-  --color-hero: #0b1830;
-  --color-hero-text: #f8fbff;
-  --color-hero-muted: #b5c4da;
-  --color-hero-panel: rgba(255, 255, 255, 0.08);
-  --color-hero-border: rgba(255, 255, 255, 0.14);
+  --color-bg: #0b1121;
+  --color-surface: #141d33;
+  --color-border: #233454;
+  --color-text: #f1f5f9;
+  --color-muted: #94a3b8;
+  --color-accent: #06b6d4; /* Tyrkysová (Cyan) */
+  --color-accent-strong: #0891b2;
+  --color-accent-soft: rgba(6, 182, 212, 0.15);
+  --color-accent-border: rgba(6, 182, 212, 0.3);
+  --color-chip: rgba(255, 255, 255, 0.05);
+  --color-chip-border: rgba(255, 255, 255, 0.1);
+  --color-warm: #f43f5e; /* Oranžovo-červená (Rose) z prvního návrhu */
+  --color-highlight: #38bdf8;
+  --color-highlight-soft: rgba(56, 189, 248, 0.1);
+  --color-hero: #0b1121;
+  --color-hero-text: #ffffff;
+  --color-hero-muted: #cbd5e1;
+  --color-hero-panel: rgba(255, 255, 255, 0.05);
+  --color-hero-border: rgba(255, 255, 255, 0.1);
 }
 
 :root {
-  --color-bg: #f4f7fb;
-  --color-surface: #e9eef7;
-  --color-border: #c7d3e2;
-  --color-text: #0f2035;
-  --color-muted: #55657d;
-  --color-accent: #0e7490;
-  --color-accent-strong: #0b4f66;
-  --color-accent-soft: #dff4fb;
-  --color-accent-border: #9fd3e3;
-  --color-chip: #eef7ff;
-  --color-chip-border: #c7dff1;
-  --color-warm: #b8672a;
-  --color-highlight: #ff9b54;
-  --color-highlight-soft: #ffe7d6;
-  --color-hero: #0b1830;
-  --color-hero-text: #f8fbff;
-  --color-hero-muted: #b5c4da;
-  --color-hero-panel: rgba(255, 255, 255, 0.08);
-  --color-hero-border: rgba(255, 255, 255, 0.14);
+  color-scheme: dark;
+  --color-bg: #0b1121;
+  --color-surface: #141d33;
+  --color-border: #233454;
+  --color-text: #f1f5f9;
+  --color-muted: #94a3b8;
+  --color-accent: #06b6d4;
+  --color-accent-strong: #0891b2;
+  --color-accent-soft: rgba(6, 182, 212, 0.15);
+  --color-accent-border: rgba(6, 182, 212, 0.3);
+  --color-chip: rgba(255, 255, 255, 0.05);
+  --color-chip-border: rgba(255, 255, 255, 0.1);
+  --color-warm: #f43f5e;
+  --color-highlight: #38bdf8;
+  --color-highlight-soft: rgba(56, 189, 248, 0.1);
+  --color-hero: #0b1121;
+  --color-hero-text: #ffffff;
+  --color-hero-muted: #cbd5e1;
+  --color-hero-panel: rgba(255, 255, 255, 0.05);
+  --color-hero-border: rgba(255, 255, 255, 0.1);
 }
 
 *, *::before, *::after {
@@ -55,13 +56,49 @@ html {
 
 body {
   background:
-    radial-gradient(circle at top left, rgba(14, 116, 144, 0.08), transparent 28%),
-    radial-gradient(circle at top right, rgba(255, 155, 84, 0.08), transparent 24%),
+    radial-gradient(circle at top left, rgba(6, 182, 212, 0.12), transparent 30%),
+    radial-gradient(circle at top right, rgba(244, 63, 94, 0.08), transparent 25%),
     var(--color-bg);
   color: var(--color-text);
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   line-height: 1.6;
+}
+
+/* Modern Link stylings */
+a {
+  color: var(--color-text);
+  text-decoration: none;
+  transition: all 0.25s ease;
+  position: relative;
+}
+
+a.text-link {
+  color: var(--color-accent);
+  font-weight: 500;
+}
+
+a.text-link:hover {
+  color: var(--color-highlight);
+  text-shadow: 0 0 12px var(--color-highlight-soft);
+}
+
+a.text-link::after {
+  content: "";
+  position: absolute;
+  width: 100%;
+  transform: scaleX(0);
+  height: 2px;
+  bottom: -2px;
+  left: 0;
+  background-color: var(--color-accent);
+  transform-origin: bottom right;
+  transition: transform 0.25s ease-out;
+}
+
+a.text-link:hover::after {
+  transform: scaleX(1);
+  transform-origin: bottom left;
 }
 
 ::selection {

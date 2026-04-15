@@ -297,7 +297,7 @@ export default function Awards() {
                   animate={inView ? "visible" : "hidden"}
                   style={{
                     padding: "1.125rem 1.25rem",
-                    background: "linear-gradient(180deg, #ffffff, #f8fbff)",
+                    background: "var(--color-surface)",
                     border: "1px solid var(--color-border)",
                     borderRadius: 14,
                   }}

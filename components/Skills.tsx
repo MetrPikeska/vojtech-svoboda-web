@@ -114,7 +114,7 @@ export default function Skills() {
                 initial="hidden"
                 animate={inView ? "visible" : "hidden"}
                 style={{
-                  background: "linear-gradient(180deg, #ffffff, #f8fbff)",
+                  background: "var(--color-surface)",
                   border: "1px solid var(--color-border)",
                   borderRadius: 18,
                   padding: "1.75rem",
@@ -123,7 +123,7 @@ export default function Skills() {
                 }}
                 whileHover={{
                   y: -3,
-                  boxShadow: "0 16px 40px rgba(7,22,41,0.09)",
+                  boxShadow: "0 16px 40px rgba(0,0,0,0.2)",
                   borderColor: "var(--color-accent-border)",
                 }}
               >

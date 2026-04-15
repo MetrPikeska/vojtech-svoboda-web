@@ -159,9 +159,7 @@ function ProjectCard({
       whileHover={{ y: hasLink || hasMultiLinks ? -4 : -2 }}
       transition={{ duration: 0.25, ease: [0.22, 1, 0.36, 1] as [number, number, number, number] }}
       style={{
-        background: featured
-          ? "linear-gradient(180deg, #ffffff, #f6faff)"
-          : "linear-gradient(180deg, #ffffff, #fbfdff)",
+        background: "var(--color-surface)",
         border: "1px solid var(--color-border)",
         borderRadius: 18,
         padding: isMobile ? "1.25rem" : featured ? "2.5rem" : "1.75rem",
