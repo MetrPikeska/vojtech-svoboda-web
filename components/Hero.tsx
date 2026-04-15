@@ -42,7 +42,7 @@ export default function Hero() {
         display: "flex",
         alignItems: "center",
         background:
-          "linear-gradient(135deg, var(--color-hero) 0%, #10233f 55%, #17385d 100%)",
+          "linear-gradient(135deg, var(--color-hero) 0%, #0d1f38 55%, #0a1428 100%)",
         overflow: "hidden",
       }}
     >
@@ -54,7 +54,7 @@ export default function Hero() {
           position: "absolute",
           inset: 0,
           background:
-            "radial-gradient(circle at 18% 22%, rgba(255,155,84,0.22), transparent 22%), radial-gradient(circle at 82% 18%, rgba(71,224,209,0.2), transparent 24%), radial-gradient(ellipse 80% 80% at 50% 50%, transparent 40%, rgba(11,24,48,0.7) 100%)",
+            "radial-gradient(circle at 18% 22%, rgba(8, 184, 175, 0.12), transparent 22%), radial-gradient(circle at 82% 18%, rgba(8, 184, 175, 0.1), transparent 24%), radial-gradient(ellipse 80% 80% at 50% 50%, transparent 40%, rgba(10, 20, 40, 0.6) 100%)",
           pointerEvents: "none",
         }}
       />
@@ -121,7 +121,7 @@ export default function Hero() {
             }}
           >
             Vojtěch{" "}
-            <em style={{ fontStyle: "italic", color: "#7ce9dc" }}>Svoboda</em>
+            <em style={{ fontStyle: "italic", color: "var(--color-accent)" }}>Svoboda</em>
           </motion.h1>
 
           <motion.p
@@ -162,7 +162,7 @@ export default function Hero() {
                 alignItems: "center",
                 gap: "0.5rem",
                 backgroundColor: "var(--color-highlight)",
-                color: "#10233f",
+                color: "#000000",
                 padding: "0.875rem 2rem",
                 borderRadius: 999,
                 fontSize: "0.9375rem",
@@ -172,12 +172,12 @@ export default function Hero() {
                 letterSpacing: "0.01em",
               }}
               onMouseEnter={(e) => {
-                (e.currentTarget as HTMLElement).style.backgroundColor = "#ffb97a";
+                (e.currentTarget as HTMLElement).style.backgroundColor = "var(--color-highlight)";
                 (e.currentTarget as HTMLElement).style.transform = "translateY(-1px)";
               }}
               onMouseLeave={(e) => {
                 (e.currentTarget as HTMLElement).style.backgroundColor =
-                  "var(--color-highlight)";
+                  "var(--color-accent)";
                 (e.currentTarget as HTMLElement).style.transform = "translateY(0)";
               }}
             >
@@ -217,7 +217,7 @@ export default function Hero() {
                 letterSpacing: "0.01em",
               }}
               onMouseEnter={(e) => {
-                (e.currentTarget as HTMLElement).style.borderColor = "#7ce9dc";
+                (e.currentTarget as HTMLElement).style.borderColor = "var(--color-accent)";
                 (e.currentTarget as HTMLElement).style.color = "#ffffff";
                 (e.currentTarget as HTMLElement).style.transform = "translateY(-1px)";
               }}
@@ -262,7 +262,7 @@ export default function Hero() {
                     fontWeight: 700,
                     letterSpacing: "0.08em",
                     textTransform: "uppercase",
-                    color: "#7ce9dc",
+                    color: "var(--color-accent)",
                     marginBottom: "0.45rem",
                   }}
                 >
@@ -333,7 +333,7 @@ export default function Hero() {
                   position: "absolute",
                   inset: 0,
                   background:
-                    "linear-gradient(to bottom, rgba(11,24,48,0.08) 0%, transparent 35%, rgba(11,24,48,0.45) 100%)",
+                    "linear-gradient(to bottom, rgba(10, 20, 40, 0.05) 0%, transparent 35%, rgba(10, 20, 40, 0.4) 100%)",
                 }}
               />
             </div>
@@ -344,83 +344,10 @@ export default function Hero() {
                 position: "absolute",
                 inset: 14,
                 borderRadius: 28,
-                border: "1px solid rgba(124, 233, 220, 0.2)",
+                border: "1px solid rgba(8, 184, 175, 0.15)",
                 zIndex: -1,
               }}
             />
-
-            <div
-              style={{
-                position: "absolute",
-                right: -8,
-                top: 24,
-                padding: "0.9rem 1rem",
-                borderRadius: 18,
-                background: "rgba(255,255,255,0.1)",
-                border: "1px solid var(--color-hero-border)",
-                backdropFilter: "blur(10px)",
-              }}
-            >
-              <p
-                style={{
-                  fontSize: "0.72rem",
-                  fontWeight: 700,
-                  letterSpacing: "0.08em",
-                  textTransform: "uppercase",
-                  color: "var(--color-highlight)",
-                  marginBottom: "0.35rem",
-                }}
-              >
-                Směr, který hledám
-              </p>
-              <p
-                style={{
-                  fontSize: "0.92rem",
-                  fontWeight: 700,
-                  color: "var(--color-hero-text)",
-                  lineHeight: 1.35,
-                }}
-              >
-                Datová analýza
-                <br />
-                s prostorovým přesahem
-              </p>
-            </div>
-
-            <div
-              style={{
-                position: "absolute",
-                left: -20,
-                bottom: 0,
-                maxWidth: 250,
-                padding: "1rem 1.05rem",
-                borderRadius: 18,
-                background: "rgba(255,255,255,0.1)",
-                border: "1px solid var(--color-hero-border)",
-                backdropFilter: "blur(12px)",
-              }}
-            >
-              <p
-                style={{
-                  fontSize: "0.82rem",
-                  fontWeight: 700,
-                  color: "#7ce9dc",
-                  marginBottom: "0.35rem",
-                }}
-              >
-                ArcGIS Pro · ArcGIS Online · PostgreSQL
-              </p>
-              <p
-                style={{
-                  fontSize: "0.8rem",
-                  lineHeight: 1.6,
-                  color: "var(--color-hero-muted)",
-                }}
-              >
-                Analýza, vizualizace a publikace výstupů od práce s daty po mapovou
-                prezentaci.
-              </p>
-            </div>
           </motion.div>
         )}
 

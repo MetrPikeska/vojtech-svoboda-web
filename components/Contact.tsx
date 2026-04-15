@@ -50,7 +50,7 @@ export default function Contact() {
       style={{
         padding: isMobile ? "4rem 1.25rem" : "7rem 2rem",
         background:
-          "linear-gradient(135deg, var(--color-hero) 0%, #102744 60%, #173f68 100%)",
+          "linear-gradient(135deg, var(--color-hero) 0%, #0d1f38 60%, #0a1428 100%)",
         position: "relative",
         overflow: "hidden",
       }}
@@ -72,7 +72,7 @@ export default function Contact() {
             fontWeight: 700,
             letterSpacing: "0.12em",
             textTransform: "uppercase",
-            color: "#7ce9dc",
+            color: "var(--color-accent)",
             marginBottom: "1rem",
             display: "flex",
             alignItems: "center",
@@ -84,7 +84,7 @@ export default function Contact() {
               display: "inline-block",
               width: 24,
               height: 1.5,
-              backgroundColor: "#7ce9dc",
+              backgroundColor: "var(--color-accent)",
             }}
           />
           Kontakt
@@ -347,7 +347,7 @@ export default function Contact() {
                   justifyContent: "center",
                   gap: "0.5rem",
                   backgroundColor: "var(--color-highlight)",
-                  color: "#102744",
+                  color: "#000000",
                   padding: "0.875rem 1.75rem",
                   borderRadius: 999,
                   fontSize: "0.9375rem",
@@ -360,13 +360,13 @@ export default function Contact() {
                 }}
                 onMouseEnter={(e) => {
                   (e.currentTarget as HTMLButtonElement).style.backgroundColor =
-                    "#ffb97a";
+                    "var(--color-highlight)";
                   (e.currentTarget as HTMLButtonElement).style.transform =
                     "translateY(-1px)";
                 }}
                 onMouseLeave={(e) => {
                   (e.currentTarget as HTMLButtonElement).style.backgroundColor =
-                    "var(--color-highlight)";
+                    "var(--color-accent)";
                   (e.currentTarget as HTMLButtonElement).style.transform =
                     "translateY(0)";
                 }}

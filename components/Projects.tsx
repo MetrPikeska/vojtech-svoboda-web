@@ -177,7 +177,7 @@ function ProjectCard({
         const el = e.target as HTMLElement;
         const article = el.closest("article");
         if (article) {
-          article.style.boxShadow = "0 18px 48px rgba(7,22,41,0.1)";
+          article.style.boxShadow = "0 18px 48px rgba(10, 20, 40, 0.12)";
           article.style.borderColor = "var(--color-accent-border)";
         }
       }}

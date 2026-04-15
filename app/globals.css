@@ -1,48 +1,48 @@
 @import "tailwindcss";
 
 @theme {
-  --color-bg: #0b1121;
-  --color-surface: #141d33;
-  --color-border: #233454;
-  --color-text: #f1f5f9;
-  --color-muted: #94a3b8;
-  --color-accent: #06b6d4; /* Tyrkysová (Cyan) */
-  --color-accent-strong: #0891b2;
-  --color-accent-soft: rgba(6, 182, 212, 0.15);
-  --color-accent-border: rgba(6, 182, 212, 0.3);
-  --color-chip: rgba(255, 255, 255, 0.05);
-  --color-chip-border: rgba(255, 255, 255, 0.1);
-  --color-warm: #f43f5e; /* Oranžovo-červená (Rose) z prvního návrhu */
-  --color-highlight: #38bdf8;
-  --color-highlight-soft: rgba(56, 189, 248, 0.1);
-  --color-hero: #0b1121;
+  --color-bg: #0a1428; /* Tmavě modrá - base */
+  --color-surface: #111c2d; /* Tmavě modrá - karty */
+  --color-border: #1a2844; /* Tmavě modrá - hrany */
+  --color-text: #f5f7fa; /* Lehce bílá */
+  --color-muted: #8a99b0; /* Středně šedá */
+  --color-accent: #08b8af; /* Lehce tyrkysová */
+  --color-accent-strong: #067a74;
+  --color-accent-soft: rgba(8, 184, 175, 0.12);
+  --color-accent-border: rgba(8, 184, 175, 0.25);
+  --color-chip: #0d1820;
+  --color-chip-border: #1a2844;
+  --color-warm: #f5f7fa; /* Lehce bílá */
+  --color-highlight: #4db3a8; /* Lehce tyrkysová varianta */
+  --color-highlight-soft: rgba(77, 179, 168, 0.12);
+  --color-hero: #0a1428;
   --color-hero-text: #ffffff;
-  --color-hero-muted: #cbd5e1;
-  --color-hero-panel: rgba(255, 255, 255, 0.05);
-  --color-hero-border: rgba(255, 255, 255, 0.1);
+  --color-hero-muted: #a0afbf;
+  --color-hero-panel: rgba(255, 255, 255, 0.04);
+  --color-hero-border: rgba(255, 255, 255, 0.08);
 }
 
 :root {
   color-scheme: dark;
-  --color-bg: #0b1121;
-  --color-surface: #141d33;
-  --color-border: #233454;
-  --color-text: #f1f5f9;
-  --color-muted: #94a3b8;
-  --color-accent: #06b6d4;
-  --color-accent-strong: #0891b2;
-  --color-accent-soft: rgba(6, 182, 212, 0.15);
-  --color-accent-border: rgba(6, 182, 212, 0.3);
-  --color-chip: rgba(255, 255, 255, 0.05);
-  --color-chip-border: rgba(255, 255, 255, 0.1);
-  --color-warm: #f43f5e;
-  --color-highlight: #38bdf8;
-  --color-highlight-soft: rgba(56, 189, 248, 0.1);
-  --color-hero: #0b1121;
+  --color-bg: #0a1428;
+  --color-surface: #111c2d;
+  --color-border: #1a2844;
+  --color-text: #f5f7fa;
+  --color-muted: #8a99b0;
+  --color-accent: #08b8af;
+  --color-accent-strong: #067a74;
+  --color-accent-soft: rgba(8, 184, 175, 0.12);
+  --color-accent-border: rgba(8, 184, 175, 0.25);
+  --color-chip: #0d1820;
+  --color-chip-border: #1a2844;
+  --color-warm: #f5f7fa;
+  --color-highlight: #4db3a8;
+  --color-highlight-soft: rgba(77, 179, 168, 0.12);
+  --color-hero: #0a1428;
   --color-hero-text: #ffffff;
-  --color-hero-muted: #cbd5e1;
-  --color-hero-panel: rgba(255, 255, 255, 0.05);
-  --color-hero-border: rgba(255, 255, 255, 0.1);
+  --color-hero-muted: #a0afbf;
+  --color-hero-panel: rgba(255, 255, 255, 0.04);
+  --color-hero-border: rgba(255, 255, 255, 0.08);
 }
 
 *, *::before, *::after {
@@ -56,8 +56,8 @@ html {
 
 body {
   background:
-    radial-gradient(circle at top left, rgba(6, 182, 212, 0.12), transparent 30%),
-    radial-gradient(circle at top right, rgba(244, 63, 94, 0.08), transparent 25%),
+    radial-gradient(circle at top left, rgba(8, 184, 175, 0.08), transparent 35%),
+    radial-gradient(circle at bottom right, rgba(10, 20, 40, 0.5), transparent 50%),
     var(--color-bg);
   color: var(--color-text);
   -webkit-font-smoothing: antialiased;

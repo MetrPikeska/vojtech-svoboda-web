@@ -52,7 +52,7 @@ export default function Header() {
         backdropFilter: solidBg ? "blur(12px)" : "none",
         WebkitBackdropFilter: solidBg ? "blur(12px)" : "none",
         borderBottom: scrolled ? "1px solid var(--color-border)" : "1px solid transparent",
-        boxShadow: scrolled ? "0 10px 30px rgba(7,22,41,0.08)" : "none",
+        boxShadow: scrolled ? "0 10px 30px rgba(10, 20, 40, 0.1)" : "none",
       }}
     >
       <div
