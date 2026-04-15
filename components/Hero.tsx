@@ -4,6 +4,24 @@ import Image from "next/image";
 import { motion } from "framer-motion";
 import { useIsMobile } from "@/lib/hooks";
 
+const focusCards = [
+  {
+    label: "Pythonový stack",
+    title: "pandas, geopandas, matplotlib",
+    desc: "Datová příprava, explorace a převod výsledků do čitelných výstupů.",
+  },
+  {
+    label: "Prostorové metody",
+    title: "ESDA, shlukování, autokorelace",
+    desc: "Baví mě chvíle, kdy data dávají smysl až po doplnění o prostorový kontext.",
+  },
+  {
+    label: "GIS & databáze",
+    title: "ArcGIS Pro, SQL, PostgreSQL",
+    desc: "K analýze přidávám GIS workflow, práci s databázemi a publikaci výstupů.",
+  },
+];
+
 const fadeUp = {
   hidden: { opacity: 0, y: 24 },
   visible: (i: number) => ({
@@ -23,7 +41,8 @@ export default function Hero() {
         minHeight: "100vh",
         display: "flex",
         alignItems: "center",
-        background: "#FAFAF8",
+        background:
+          "linear-gradient(135deg, var(--color-hero) 0%, #10233f 55%, #17385d 100%)",
         overflow: "hidden",
       }}
     >
@@ -35,7 +54,7 @@ export default function Hero() {
           position: "absolute",
           inset: 0,
           background:
-            "radial-gradient(ellipse 80% 80% at 50% 50%, transparent 40%, #FAFAF8 100%)",
+            "radial-gradient(circle at 18% 22%, rgba(255,155,84,0.22), transparent 22%), radial-gradient(circle at 82% 18%, rgba(71,224,209,0.2), transparent 24%), radial-gradient(ellipse 80% 80% at 50% 50%, transparent 40%, rgba(11,24,48,0.7) 100%)",
           pointerEvents: "none",
         }}
       />
@@ -63,10 +82,10 @@ export default function Hero() {
             animate="visible"
             style={{
               fontSize: "0.8125rem",
-              fontWeight: 600,
+              fontWeight: 700,
               letterSpacing: "0.12em",
               textTransform: "uppercase",
-              color: "#1C3A2F",
+              color: "var(--color-highlight)",
               marginBottom: "1.5rem",
               display: "flex",
               alignItems: "center",
@@ -78,11 +97,11 @@ export default function Hero() {
                 display: "inline-block",
                 width: 28,
                 height: 1.5,
-                backgroundColor: "#1C3A2F",
+                backgroundColor: "var(--color-highlight)",
                 flexShrink: 0,
               }}
             />
-            Geoinformatik · Prostorová data · Kartografie
+            Statistika · Python · Prostorová data
           </motion.p>
 
           <motion.h1
@@ -95,14 +114,14 @@ export default function Hero() {
               fontSize: "clamp(3rem, 8vw, 6.5rem)",
               fontWeight: 500,
               lineHeight: 1.05,
-              color: "#1A1A18",
+              color: "var(--color-hero-text)",
               letterSpacing: "-0.02em",
-              marginBottom: "2rem",
+              marginBottom: "1.5rem",
               maxWidth: "14ch",
             }}
           >
             Vojtěch{" "}
-            <em style={{ fontStyle: "italic", color: "#1C3A2F" }}>Svoboda</em>
+            <em style={{ fontStyle: "italic", color: "#7ce9dc" }}>Svoboda</em>
           </motion.h1>
 
           <motion.p
@@ -112,15 +131,15 @@ export default function Hero() {
             animate="visible"
             style={{
               fontSize: "clamp(1rem, 2vw, 1.1875rem)",
-              color: "#6B6860",
-              lineHeight: 1.7,
-              maxWidth: "52ch",
+              color: "var(--color-hero-muted)",
+              lineHeight: 1.8,
+              maxWidth: "58ch",
               marginBottom: "3rem",
             }}
           >
-            MSc student geoinformatiky na UPOL. Pracuji s prostorovými daty, GIS
-            analýzou a kartografickou vizualizací. Hledám zajímavé projekty a
-            spolupráci.
+            Nejvíc mě baví statistika a datová analýza v Pythonu, hlavně ve chvíli,
+            kdy se propojí s GISem, mobilními daty a prostorovým kontextem. Právě v
+            tom vidím svou přidanou hodnotu a směr, kterému se chci dál věnovat.
           </motion.p>
 
           <motion.div
@@ -142,22 +161,23 @@ export default function Hero() {
                 display: "inline-flex",
                 alignItems: "center",
                 gap: "0.5rem",
-                backgroundColor: "#1C3A2F",
-                color: "#FAFAF8",
+                backgroundColor: "var(--color-highlight)",
+                color: "#10233f",
                 padding: "0.875rem 2rem",
-                borderRadius: 8,
+                borderRadius: 999,
                 fontSize: "0.9375rem",
-                fontWeight: 500,
+                fontWeight: 700,
                 textDecoration: "none",
                 transition: "background 0.2s, transform 0.2s",
                 letterSpacing: "0.01em",
               }}
               onMouseEnter={(e) => {
-                (e.currentTarget as HTMLElement).style.backgroundColor = "#2D5C48";
+                (e.currentTarget as HTMLElement).style.backgroundColor = "#ffb97a";
                 (e.currentTarget as HTMLElement).style.transform = "translateY(-1px)";
               }}
               onMouseLeave={(e) => {
-                (e.currentTarget as HTMLElement).style.backgroundColor = "#1C3A2F";
+                (e.currentTarget as HTMLElement).style.backgroundColor =
+                  "var(--color-highlight)";
                 (e.currentTarget as HTMLElement).style.transform = "translateY(0)";
               }}
             >
@@ -185,89 +205,224 @@ export default function Hero() {
                 display: "inline-flex",
                 alignItems: "center",
                 gap: "0.5rem",
-                backgroundColor: "transparent",
-                color: "#1A1A18",
+                backgroundColor: "rgba(255,255,255,0.06)",
+                color: "var(--color-hero-text)",
                 padding: "0.875rem 2rem",
-                borderRadius: 8,
+                borderRadius: 999,
                 fontSize: "0.9375rem",
-                fontWeight: 500,
+                fontWeight: 600,
                 textDecoration: "none",
-                border: "1.5px solid #C8C4BC",
+                border: "1.5px solid var(--color-hero-border)",
                 transition: "border-color 0.2s, color 0.2s, transform 0.2s",
                 letterSpacing: "0.01em",
               }}
               onMouseEnter={(e) => {
-                (e.currentTarget as HTMLElement).style.borderColor = "#1C3A2F";
-                (e.currentTarget as HTMLElement).style.color = "#1C3A2F";
+                (e.currentTarget as HTMLElement).style.borderColor = "#7ce9dc";
+                (e.currentTarget as HTMLElement).style.color = "#ffffff";
                 (e.currentTarget as HTMLElement).style.transform = "translateY(-1px)";
               }}
               onMouseLeave={(e) => {
-                (e.currentTarget as HTMLElement).style.borderColor = "#C8C4BC";
-                (e.currentTarget as HTMLElement).style.color = "#1A1A18";
+                (e.currentTarget as HTMLElement).style.borderColor =
+                  "var(--color-hero-border)";
+                (e.currentTarget as HTMLElement).style.color = "var(--color-hero-text)";
                 (e.currentTarget as HTMLElement).style.transform = "translateY(0)";
               }}
             >
               Kontakt
             </a>
           </motion.div>
+
+          <motion.div
+            custom={4}
+            variants={fadeUp}
+            initial="hidden"
+            animate="visible"
+            style={{
+              display: "grid",
+              gridTemplateColumns:
+                "repeat(auto-fit, minmax(min(100%, 220px), 1fr))",
+              gap: "0.9rem",
+              marginTop: "2rem",
+            }}
+          >
+            {focusCards.map((card) => (
+              <div
+                key={card.label}
+                style={{
+                  padding: "1rem 1.1rem",
+                  borderRadius: 18,
+                  background: "var(--color-hero-panel)",
+                  border: "1px solid var(--color-hero-border)",
+                  boxShadow: "0 14px 40px rgba(4, 10, 24, 0.22)",
+                }}
+              >
+                <p
+                  style={{
+                    fontSize: "0.72rem",
+                    fontWeight: 700,
+                    letterSpacing: "0.08em",
+                    textTransform: "uppercase",
+                    color: "#7ce9dc",
+                    marginBottom: "0.45rem",
+                  }}
+                >
+                  {card.label}
+                </p>
+                <p
+                  style={{
+                    fontSize: "0.95rem",
+                    fontWeight: 700,
+                    color: "var(--color-hero-text)",
+                    lineHeight: 1.35,
+                    marginBottom: "0.35rem",
+                  }}
+                >
+                  {card.title}
+                </p>
+                <p
+                  style={{
+                    fontSize: "0.84rem",
+                    lineHeight: 1.6,
+                    color: "var(--color-hero-muted)",
+                  }}
+                >
+                  {card.desc}
+                </p>
+              </div>
+            ))}
+          </motion.div>
         </div>
 
         {/* Right: photo — hidden on mobile */}
-        {!isMobile && <motion.div
-          custom={4}
-          variants={fadeUp}
-          initial="hidden"
-          animate="visible"
-          style={{
-            position: "relative",
-            flexShrink: 0,
-          }}
-        >
-          <div
+        {!isMobile && (
+          <motion.div
+            custom={5}
+            variants={fadeUp}
+            initial="hidden"
+            animate="visible"
             style={{
-              width: 320,
-              height: 380,
-              borderRadius: 24,
-              overflow: "hidden",
-              border: "1px solid #E4E2DC",
               position: "relative",
-              background: "#EBF0EC",
+              flexShrink: 0,
+              paddingRight: "0.5rem",
+              paddingBottom: "2.25rem",
             }}
           >
-            <Image
-              src="/hero_foto.jpeg"
-              alt="Vojtěch Svoboda"
-              fill
-              style={{ objectFit: "cover", objectPosition: "center top" }}
-              priority
-              sizes="320px"
-            />
-            {/* Subtle overlay */}
+            <div
+              style={{
+                width: 340,
+                height: 420,
+                borderRadius: 28,
+                overflow: "hidden",
+                border: "1px solid var(--color-hero-border)",
+                position: "relative",
+                background: "rgba(255,255,255,0.06)",
+                boxShadow: "0 28px 80px rgba(4, 10, 24, 0.36)",
+              }}
+            >
+              <Image
+                src="/hero_foto.jpeg"
+                alt="Vojtěch Svoboda"
+                fill
+                style={{ objectFit: "cover", objectPosition: "center top" }}
+                priority
+                sizes="340px"
+              />
+              <div
+                aria-hidden
+                style={{
+                  position: "absolute",
+                  inset: 0,
+                  background:
+                    "linear-gradient(to bottom, rgba(11,24,48,0.08) 0%, transparent 35%, rgba(11,24,48,0.45) 100%)",
+                }}
+              />
+            </div>
+
             <div
               aria-hidden
               style={{
                 position: "absolute",
-                inset: 0,
-                background:
-                  "linear-gradient(to bottom, transparent 60%, rgba(28,58,47,0.08) 100%)",
+                inset: 14,
+                borderRadius: 28,
+                border: "1px solid rgba(124, 233, 220, 0.2)",
+                zIndex: -1,
               }}
             />
-          </div>
-          {/* Decorative border offset */}
-          <div
-            aria-hidden
-            style={{
-              position: "absolute",
-              top: 12,
-              left: 12,
-              width: 320,
-              height: 380,
-              borderRadius: 24,
-              border: "1px solid #C8D8CC",
-              zIndex: -1,
-            }}
-          />
-        </motion.div>}
+
+            <div
+              style={{
+                position: "absolute",
+                right: -8,
+                top: 24,
+                padding: "0.9rem 1rem",
+                borderRadius: 18,
+                background: "rgba(255,255,255,0.1)",
+                border: "1px solid var(--color-hero-border)",
+                backdropFilter: "blur(10px)",
+              }}
+            >
+              <p
+                style={{
+                  fontSize: "0.72rem",
+                  fontWeight: 700,
+                  letterSpacing: "0.08em",
+                  textTransform: "uppercase",
+                  color: "var(--color-highlight)",
+                  marginBottom: "0.35rem",
+                }}
+              >
+                Směr, který hledám
+              </p>
+              <p
+                style={{
+                  fontSize: "0.92rem",
+                  fontWeight: 700,
+                  color: "var(--color-hero-text)",
+                  lineHeight: 1.35,
+                }}
+              >
+                Datová analýza
+                <br />
+                s prostorovým přesahem
+              </p>
+            </div>
+
+            <div
+              style={{
+                position: "absolute",
+                left: -20,
+                bottom: 0,
+                maxWidth: 250,
+                padding: "1rem 1.05rem",
+                borderRadius: 18,
+                background: "rgba(255,255,255,0.1)",
+                border: "1px solid var(--color-hero-border)",
+                backdropFilter: "blur(12px)",
+              }}
+            >
+              <p
+                style={{
+                  fontSize: "0.82rem",
+                  fontWeight: 700,
+                  color: "#7ce9dc",
+                  marginBottom: "0.35rem",
+                }}
+              >
+                ArcGIS Pro · ArcGIS Online · PostgreSQL
+              </p>
+              <p
+                style={{
+                  fontSize: "0.8rem",
+                  lineHeight: 1.6,
+                  color: "var(--color-hero-muted)",
+                }}
+              >
+                Analýza, vizualizace a publikace výstupů od práce s daty po mapovou
+                prezentaci.
+              </p>
+            </div>
+          </motion.div>
+        )}
 
         {/* Scroll indicator */}
         <motion.div
@@ -281,10 +436,10 @@ export default function Hero() {
             display: "flex",
             alignItems: "center",
             gap: "0.75rem",
-            color: "#A8A49E",
+            color: "rgba(248, 251, 255, 0.6)",
             fontSize: "0.75rem",
             letterSpacing: "0.08em",
-            fontWeight: 500,
+            fontWeight: 600,
           }}
         >
           <span
@@ -292,7 +447,7 @@ export default function Hero() {
               display: "inline-block",
               width: 1,
               height: 40,
-              backgroundColor: "#C8C4BC",
+              backgroundColor: "rgba(248, 251, 255, 0.24)",
               position: "relative",
               overflow: "hidden",
             }}
@@ -304,7 +459,7 @@ export default function Hero() {
                 position: "absolute",
                 inset: 0,
                 background:
-                  "linear-gradient(to bottom, transparent, #1C3A2F, transparent)",
+                  "linear-gradient(to bottom, transparent, var(--color-highlight), transparent)",
               }}
             />
           </span>
@@ -330,7 +485,7 @@ function ContourBackground() {
       viewBox="0 0 1200 800"
       preserveAspectRatio="xMidYMid slice"
     >
-      <g fill="none" stroke="#1C3A2F" strokeWidth="1" strokeLinecap="round">
+      <g fill="none" stroke="#55d2f0" strokeWidth="1" strokeLinecap="round">
         <ellipse cx="700" cy="420" rx="520" ry="340" />
         <ellipse cx="700" cy="420" rx="460" ry="295" />
         <ellipse cx="700" cy="415" rx="400" ry="255" />

@@ -18,10 +18,10 @@ const inputStyle: React.CSSProperties = {
   width: "100%",
   padding: "0.875rem 1rem",
   borderRadius: 10,
-  border: "1.5px solid #E4E2DC",
-  background: "#FAFAF8",
+  border: "1.5px solid var(--color-border)",
+  background: "var(--color-bg)",
   fontSize: "0.9375rem",
-  color: "#1A1A18",
+  color: "var(--color-text)",
   outline: "none",
   fontFamily: "DM Sans, system-ui, sans-serif",
   transition: "border-color 0.2s",
@@ -49,7 +49,8 @@ export default function Contact() {
       id="kontakt"
       style={{
         padding: isMobile ? "4rem 1.25rem" : "7rem 2rem",
-        background: "#1C3A2F",
+        background:
+          "linear-gradient(135deg, var(--color-hero) 0%, #102744 60%, #173f68 100%)",
         position: "relative",
         overflow: "hidden",
       }}
@@ -68,10 +69,10 @@ export default function Contact() {
           animate={inView ? "visible" : "hidden"}
           style={{
             fontSize: "0.75rem",
-            fontWeight: 600,
+            fontWeight: 700,
             letterSpacing: "0.12em",
             textTransform: "uppercase",
-            color: "#7DAF96",
+            color: "#7ce9dc",
             marginBottom: "1rem",
             display: "flex",
             alignItems: "center",
@@ -83,7 +84,7 @@ export default function Contact() {
               display: "inline-block",
               width: 24,
               height: 1.5,
-              backgroundColor: "#7DAF96",
+              backgroundColor: "#7ce9dc",
             }}
           />
           Kontakt
@@ -108,7 +109,7 @@ export default function Contact() {
                 fontFamily: "var(--font-display), Playfair Display, Georgia, serif",
                 fontSize: "clamp(2rem, 5vw, 3.5rem)",
                 fontWeight: 500,
-                color: "#F2F0EB",
+                color: "var(--color-hero-text)",
                 letterSpacing: "-0.02em",
                 lineHeight: 1.1,
                 marginBottom: "1.5rem",
@@ -116,7 +117,7 @@ export default function Contact() {
             >
               Pojďme
               <br />
-              <em style={{ fontStyle: "italic", color: "#A8D4BA" }}>
+              <em style={{ fontStyle: "italic", color: "var(--color-highlight)" }}>
                 spolupracovat
               </em>
             </motion.h2>
@@ -128,14 +129,15 @@ export default function Contact() {
               animate={inView ? "visible" : "hidden"}
               style={{
                 fontSize: "1rem",
-                color: "#9DB8A8",
+                color: "var(--color-hero-muted)",
                 lineHeight: 1.7,
                 marginBottom: "2.5rem",
-                maxWidth: "40ch",
+                maxWidth: "44ch",
               }}
             >
-              Hledáš geoinformatika na projekt, spolupráci nebo stáž? Ozvi se
-              — rád si popovídám.
+              Pokud řešíš GIS, prostorová data, analytický projekt nebo hledáš někoho
+              na stáž či spolupráci, ozvi se. Nejblíž mám datové analýze se spatial
+              přesahem.
             </motion.p>
 
             {/* Direct links */}
@@ -173,21 +175,21 @@ export default function Contact() {
                     display: "inline-flex",
                     alignItems: "center",
                     gap: "0.75rem",
-                    color: "#C8E0D0",
+                    color: "rgba(248, 251, 255, 0.88)",
                     textDecoration: "none",
                     fontSize: "0.9375rem",
                     fontWeight: 500,
                     transition: "color 0.2s",
                   }}
-                  whileHover={{ color: "#F2F0EB" } as never}
+                  whileHover={{ color: "#ffffff" } as never}
                 >
                   <span
                     style={{
                       width: 36,
                       height: 36,
                       borderRadius: 8,
-                      border: "1px solid rgba(255,255,255,0.12)",
-                      backgroundColor: "rgba(255,255,255,0.06)",
+                      border: "1px solid var(--color-hero-border)",
+                      backgroundColor: "rgba(255,255,255,0.08)",
                       display: "flex",
                       alignItems: "center",
                       justifyContent: "center",
@@ -212,9 +214,9 @@ export default function Contact() {
             <form
               onSubmit={handleSubmit}
               style={{
-                background: "rgba(250,250,248,0.05)",
-                border: "1px solid rgba(255,255,255,0.1)",
-                borderRadius: 16,
+                background: "rgba(255,255,255,0.08)",
+                border: "1px solid var(--color-hero-border)",
+                borderRadius: 20,
                 padding: "2rem",
                 display: "flex",
                 flexDirection: "column",
@@ -234,8 +236,8 @@ export default function Contact() {
                     style={{
                       display: "block",
                       fontSize: "0.75rem",
-                      fontWeight: 600,
-                      color: "#9DB8A8",
+                      fontWeight: 700,
+                      color: "#b5c4da",
                       marginBottom: "0.4rem",
                       letterSpacing: "0.04em",
                     }}
@@ -250,15 +252,15 @@ export default function Contact() {
                     onChange={(e) => setForm({ ...form, name: e.target.value })}
                     style={{
                       ...inputStyle,
-                      background: "rgba(250,250,248,0.08)",
-                      border: "1.5px solid rgba(255,255,255,0.1)",
-                      color: "#F2F0EB",
+                      background: "rgba(255,255,255,0.08)",
+                      border: "1.5px solid rgba(255,255,255,0.14)",
+                      color: "var(--color-hero-text)",
                     }}
                     onFocus={(e) =>
-                      (e.target.style.borderColor = "rgba(255,255,255,0.3)")
+                      (e.target.style.borderColor = "var(--color-highlight)")
                     }
                     onBlur={(e) =>
-                      (e.target.style.borderColor = "rgba(255,255,255,0.1)")
+                      (e.target.style.borderColor = "rgba(255,255,255,0.14)")
                     }
                   />
                 </div>
@@ -268,8 +270,8 @@ export default function Contact() {
                     style={{
                       display: "block",
                       fontSize: "0.75rem",
-                      fontWeight: 600,
-                      color: "#9DB8A8",
+                      fontWeight: 700,
+                      color: "#b5c4da",
                       marginBottom: "0.4rem",
                       letterSpacing: "0.04em",
                     }}
@@ -284,15 +286,15 @@ export default function Contact() {
                     onChange={(e) => setForm({ ...form, email: e.target.value })}
                     style={{
                       ...inputStyle,
-                      background: "rgba(250,250,248,0.08)",
-                      border: "1.5px solid rgba(255,255,255,0.1)",
-                      color: "#F2F0EB",
+                      background: "rgba(255,255,255,0.08)",
+                      border: "1.5px solid rgba(255,255,255,0.14)",
+                      color: "var(--color-hero-text)",
                     }}
                     onFocus={(e) =>
-                      (e.target.style.borderColor = "rgba(255,255,255,0.3)")
+                      (e.target.style.borderColor = "var(--color-highlight)")
                     }
                     onBlur={(e) =>
-                      (e.target.style.borderColor = "rgba(255,255,255,0.1)")
+                      (e.target.style.borderColor = "rgba(255,255,255,0.14)")
                     }
                   />
                 </div>
@@ -304,8 +306,8 @@ export default function Contact() {
                   style={{
                     display: "block",
                     fontSize: "0.75rem",
-                    fontWeight: 600,
-                    color: "#9DB8A8",
+                    fontWeight: 700,
+                    color: "#b5c4da",
                     marginBottom: "0.4rem",
                     letterSpacing: "0.04em",
                   }}
@@ -322,17 +324,17 @@ export default function Contact() {
                   }
                   style={{
                     ...inputStyle,
-                    background: "rgba(250,250,248,0.08)",
-                    border: "1.5px solid rgba(255,255,255,0.1)",
-                    color: "#F2F0EB",
+                    background: "rgba(255,255,255,0.08)",
+                    border: "1.5px solid rgba(255,255,255,0.14)",
+                    color: "var(--color-hero-text)",
                     resize: "vertical",
                     minHeight: 120,
                   }}
                   onFocus={(e) =>
-                    (e.target.style.borderColor = "rgba(255,255,255,0.3)")
+                    (e.target.style.borderColor = "var(--color-highlight)")
                   }
                   onBlur={(e) =>
-                    (e.target.style.borderColor = "rgba(255,255,255,0.1)")
+                    (e.target.style.borderColor = "rgba(255,255,255,0.14)")
                   }
                 />
               </div>
@@ -344,12 +346,12 @@ export default function Contact() {
                   alignItems: "center",
                   justifyContent: "center",
                   gap: "0.5rem",
-                  backgroundColor: "#F2F0EB",
-                  color: "#1C3A2F",
+                  backgroundColor: "var(--color-highlight)",
+                  color: "#102744",
                   padding: "0.875rem 1.75rem",
-                  borderRadius: 8,
+                  borderRadius: 999,
                   fontSize: "0.9375rem",
-                  fontWeight: 600,
+                  fontWeight: 700,
                   border: "none",
                   cursor: "pointer",
                   transition: "background 0.2s, transform 0.2s",
@@ -358,13 +360,13 @@ export default function Contact() {
                 }}
                 onMouseEnter={(e) => {
                   (e.currentTarget as HTMLButtonElement).style.backgroundColor =
-                    "#FFFFFF";
+                    "#ffb97a";
                   (e.currentTarget as HTMLButtonElement).style.transform =
                     "translateY(-1px)";
                 }}
                 onMouseLeave={(e) => {
                   (e.currentTarget as HTMLButtonElement).style.backgroundColor =
-                    "#F2F0EB";
+                    "var(--color-highlight)";
                   (e.currentTarget as HTMLButtonElement).style.transform =
                     "translateY(0)";
                 }}
@@ -395,7 +397,7 @@ function ContactBg() {
       viewBox="0 0 1200 600"
       preserveAspectRatio="xMidYMid slice"
     >
-      <g fill="none" stroke="#A8D4BA" strokeWidth="1">
+      <g fill="none" stroke="#7ce9dc" strokeWidth="1">
         <ellipse cx="900" cy="300" rx="500" ry="280" />
         <ellipse cx="900" cy="300" rx="420" ry="235" />
         <ellipse cx="902" cy="298" rx="345" ry="192" />

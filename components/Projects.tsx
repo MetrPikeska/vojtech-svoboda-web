@@ -27,11 +27,10 @@ export default function Projects() {
       id="projekty"
       style={{
         padding: isMobile ? "4rem 1.25rem" : "7rem 2rem",
-        background: "#FAFAF8",
+        background: "var(--color-bg)",
       }}
     >
       <div style={{ maxWidth: 1200, margin: "0 auto" }} ref={ref}>
-        {/* Label */}
         <motion.p
           custom={0}
           variants={fadeUp}
@@ -39,10 +38,10 @@ export default function Projects() {
           animate={inView ? "visible" : "hidden"}
           style={{
             fontSize: "0.75rem",
-            fontWeight: 600,
+            fontWeight: 700,
             letterSpacing: "0.12em",
             textTransform: "uppercase",
-            color: "#1C3A2F",
+            color: "var(--color-accent)",
             marginBottom: "1rem",
             display: "flex",
             alignItems: "center",
@@ -54,7 +53,7 @@ export default function Projects() {
               display: "inline-block",
               width: 24,
               height: 1.5,
-              backgroundColor: "#1C3A2F",
+              backgroundColor: "var(--color-accent)",
             }}
           />
           Projekty
@@ -79,7 +78,7 @@ export default function Projects() {
               fontFamily: "var(--font-display), Playfair Display, Georgia, serif",
               fontSize: "clamp(2rem, 5vw, 3.25rem)",
               fontWeight: 500,
-              color: "#1A1A18",
+              color: "var(--color-text)",
               letterSpacing: "-0.02em",
               maxWidth: "18ch",
             }}
@@ -94,17 +93,17 @@ export default function Projects() {
             animate={inView ? "visible" : "hidden"}
             style={{
               fontSize: "0.875rem",
-              color: "#8C8070",
-              maxWidth: "30ch",
+              color: "var(--color-muted)",
+              maxWidth: "42ch",
               textAlign: "right",
-              lineHeight: 1.6,
+              lineHeight: 1.7,
             }}
           >
-            GIS analýzy, kartografické projekty a prostorová statistika
+            Veřejné odkazy najdeš přímo u vybraných prací. Další PDF, mapové výstupy
+            a ukázky projektů mám k dispozici na vyžádání.
           </motion.p>
         </div>
 
-        {/* Featured project — wide card */}
         <motion.div
           custom={3}
           variants={fadeUp}
@@ -115,7 +114,6 @@ export default function Projects() {
           <ProjectCard project={featured} featured />
         </motion.div>
 
-        {/* Rest — 3-col grid */}
         <div
           style={{
             display: "grid",
@@ -161,9 +159,11 @@ function ProjectCard({
       whileHover={{ y: hasLink || hasMultiLinks ? -4 : -2 }}
       transition={{ duration: 0.25, ease: [0.22, 1, 0.36, 1] as [number, number, number, number] }}
       style={{
-        background: "#FAFAF8",
-        border: "1px solid #E4E2DC",
-        borderRadius: 16,
+        background: featured
+          ? "linear-gradient(180deg, #ffffff, #f6faff)"
+          : "linear-gradient(180deg, #ffffff, #fbfdff)",
+        border: "1px solid var(--color-border)",
+        borderRadius: 18,
         padding: isMobile ? "1.25rem" : featured ? "2.5rem" : "1.75rem",
         height: "100%",
         display: "flex",
@@ -179,8 +179,8 @@ function ProjectCard({
         const el = e.target as HTMLElement;
         const article = el.closest("article");
         if (article) {
-          article.style.boxShadow = "0 8px 32px rgba(28,58,47,0.11)";
-          article.style.borderColor = "#C8D8CC";
+          article.style.boxShadow = "0 18px 48px rgba(7,22,41,0.1)";
+          article.style.borderColor = "var(--color-accent-border)";
         }
       }}
       onHoverEnd={(e) => {
@@ -188,11 +188,10 @@ function ProjectCard({
         const article = el.closest("article");
         if (article) {
           article.style.boxShadow = "none";
-          article.style.borderColor = "#E4E2DC";
+          article.style.borderColor = "var(--color-border)";
         }
       }}
     >
-      {/* Decorative index number */}
       <span
         aria-hidden
         style={{
@@ -202,8 +201,8 @@ function ProjectCard({
           fontFamily: "var(--font-display), Playfair Display, Georgia, serif",
           fontSize: featured ? "5rem" : "3.5rem",
           fontWeight: 400,
-          color: "#1C3A2F",
-          opacity: 0.04,
+          color: "var(--color-accent)",
+          opacity: 0.07,
           lineHeight: 1,
           userSelect: "none",
           letterSpacing: "-0.04em",
@@ -212,7 +211,6 @@ function ProjectCard({
         {String(project.id).padStart(2, "0")}
       </span>
 
-      {/* Left / top content */}
       <div
         style={{
           flex: isRow ? "0 0 auto" : undefined,
@@ -222,10 +220,10 @@ function ProjectCard({
         <p
           style={{
             fontSize: "0.75rem",
-            fontWeight: 600,
+            fontWeight: 700,
             letterSpacing: "0.1em",
             textTransform: "uppercase",
-            color: "#8C8070",
+            color: "var(--color-warm)",
             marginBottom: "0.75rem",
           }}
         >
@@ -237,7 +235,7 @@ function ProjectCard({
             fontFamily: "var(--font-display), Playfair Display, Georgia, serif",
             fontSize: featured ? "clamp(1.375rem, 2.5vw, 1.875rem)" : "1.1875rem",
             fontWeight: 500,
-            color: "#1A1A18",
+            color: "var(--color-text)",
             lineHeight: 1.25,
             letterSpacing: "-0.015em",
             marginBottom: featured ? "0" : "0.75rem",
@@ -253,13 +251,13 @@ function ProjectCard({
               alignItems: "center",
               gap: "0.4rem",
               marginTop: "1rem",
-              backgroundColor: "#EBF0EC",
-              border: "1px solid #C8D8CC",
+              backgroundColor: "var(--color-accent-soft)",
+              border: "1px solid var(--color-accent-border)",
               borderRadius: 100,
               padding: "0.35rem 0.875rem",
               fontSize: "0.8125rem",
               fontWeight: 600,
-              color: "#1C3A2F",
+              color: "var(--color-accent-strong)",
             }}
           >
             {project.award}
@@ -267,7 +265,6 @@ function ProjectCard({
         )}
       </div>
 
-      {/* Right / bottom content */}
       <div style={{ flex: 1 }}>
         {project.award && !isRow && (
           <div
@@ -276,13 +273,13 @@ function ProjectCard({
               alignItems: "center",
               gap: "0.4rem",
               marginBottom: "0.75rem",
-              backgroundColor: "#EBF0EC",
-              border: "1px solid #C8D8CC",
+              backgroundColor: "var(--color-accent-soft)",
+              border: "1px solid var(--color-accent-border)",
               borderRadius: 100,
               padding: "0.3rem 0.75rem",
               fontSize: "0.75rem",
               fontWeight: 600,
-              color: "#1C3A2F",
+              color: "var(--color-accent-strong)",
             }}
           >
             {project.award}
@@ -292,15 +289,40 @@ function ProjectCard({
         <p
           style={{
             fontSize: "0.9375rem",
-            color: "#6B6860",
+            color: "var(--color-muted)",
             lineHeight: 1.7,
-            marginBottom: "1.25rem",
+            marginBottom: project.details || project.note ? "0.85rem" : "1.25rem",
           }}
         >
           {project.description}
         </p>
 
-        {/* Tags */}
+        {project.details && (
+          <p
+            style={{
+              fontSize: "0.875rem",
+              color: "var(--color-muted)",
+              lineHeight: 1.65,
+              marginBottom: "1rem",
+            }}
+          >
+            {project.details}
+          </p>
+        )}
+
+        {project.note && (
+          <p
+            style={{
+              fontSize: "0.8125rem",
+              fontWeight: 600,
+              color: "var(--color-accent-strong)",
+              marginBottom: "1rem",
+            }}
+          >
+            {project.note}
+          </p>
+        )}
+
         <div
           style={{
             display: "flex",
@@ -314,11 +336,11 @@ function ProjectCard({
               key={tag}
               style={{
                 fontSize: "0.75rem",
-                fontWeight: 500,
-                color: "#6B6860",
-                backgroundColor: "#F2F1EE",
-                border: "1px solid #E4E2DC",
-                borderRadius: 4,
+                fontWeight: 600,
+                color: "var(--color-accent-strong)",
+                backgroundColor: "var(--color-chip)",
+                border: "1px solid var(--color-chip-border)",
+                borderRadius: 999,
                 padding: "0.2rem 0.6rem",
                 letterSpacing: "0.01em",
               }}
@@ -328,7 +350,6 @@ function ProjectCard({
           ))}
         </div>
 
-        {/* Multi-links */}
         {hasMultiLinks && (
           <div style={{ display: "flex", flexWrap: "wrap", gap: "0.5rem" }}>
             {project.links!.map((link) => (
@@ -344,22 +365,26 @@ function ProjectCard({
                   gap: "0.3rem",
                   fontSize: "0.8125rem",
                   fontWeight: 600,
-                  color: "#1C3A2F",
-                  backgroundColor: "#EBF0EC",
-                  border: "1px solid #C8D8CC",
-                  borderRadius: 6,
+                  color: "var(--color-accent-strong)",
+                  backgroundColor: "var(--color-accent-soft)",
+                  border: "1px solid var(--color-accent-border)",
+                  borderRadius: 999,
                   padding: "0.35rem 0.75rem",
                   textDecoration: "none",
                   transition: "background 0.15s, border-color 0.15s",
                   letterSpacing: "0.01em",
                 }}
                 onMouseEnter={(e) => {
-                  (e.currentTarget as HTMLElement).style.backgroundColor = "#D4E8DA";
-                  (e.currentTarget as HTMLElement).style.borderColor = "#A8C8B4";
+                  (e.currentTarget as HTMLElement).style.backgroundColor =
+                    "var(--color-highlight-soft)";
+                  (e.currentTarget as HTMLElement).style.borderColor =
+                    "var(--color-highlight)";
                 }}
                 onMouseLeave={(e) => {
-                  (e.currentTarget as HTMLElement).style.backgroundColor = "#EBF0EC";
-                  (e.currentTarget as HTMLElement).style.borderColor = "#C8D8CC";
+                  (e.currentTarget as HTMLElement).style.backgroundColor =
+                    "var(--color-accent-soft)";
+                  (e.currentTarget as HTMLElement).style.borderColor =
+                    "var(--color-accent-border)";
                 }}
               >
                 {link.label}
@@ -369,7 +394,6 @@ function ProjectCard({
           </div>
         )}
 
-        {/* Single link */}
         {clickable && (
           <div
             style={{
@@ -378,11 +402,11 @@ function ProjectCard({
               gap: "0.35rem",
               fontSize: "0.875rem",
               fontWeight: 600,
-              color: "#1C3A2F",
+              color: "var(--color-accent)",
               letterSpacing: "0.01em",
             }}
           >
-            Zobrazit práci
+            Otevřít výstup
             <ArrowUpRight size={15} strokeWidth={2} />
           </div>
         )}

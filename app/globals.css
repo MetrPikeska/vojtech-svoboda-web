@@ -1,15 +1,47 @@
 @import "tailwindcss";
 
 @theme {
-  --color-bg: #FAFAF8;
-  --color-surface: #F2F1EE;
-  --color-border: #E4E2DC;
-  --color-text: #1A1A18;
-  --color-muted: #6B6860;
-  --color-accent: #1C3A2F;
-  --color-accent-light: #2D5C48;
-  --color-accent-bg: #EBF0EC;
-  --color-warm: #8C8070;
+  --color-bg: #f4f7fb;
+  --color-surface: #e9eef7;
+  --color-border: #c7d3e2;
+  --color-text: #0f2035;
+  --color-muted: #55657d;
+  --color-accent: #0e7490;
+  --color-accent-strong: #0b4f66;
+  --color-accent-soft: #dff4fb;
+  --color-accent-border: #9fd3e3;
+  --color-chip: #eef7ff;
+  --color-chip-border: #c7dff1;
+  --color-warm: #b8672a;
+  --color-highlight: #ff9b54;
+  --color-highlight-soft: #ffe7d6;
+  --color-hero: #0b1830;
+  --color-hero-text: #f8fbff;
+  --color-hero-muted: #b5c4da;
+  --color-hero-panel: rgba(255, 255, 255, 0.08);
+  --color-hero-border: rgba(255, 255, 255, 0.14);
+}
+
+:root {
+  --color-bg: #f4f7fb;
+  --color-surface: #e9eef7;
+  --color-border: #c7d3e2;
+  --color-text: #0f2035;
+  --color-muted: #55657d;
+  --color-accent: #0e7490;
+  --color-accent-strong: #0b4f66;
+  --color-accent-soft: #dff4fb;
+  --color-accent-border: #9fd3e3;
+  --color-chip: #eef7ff;
+  --color-chip-border: #c7dff1;
+  --color-warm: #b8672a;
+  --color-highlight: #ff9b54;
+  --color-highlight-soft: #ffe7d6;
+  --color-hero: #0b1830;
+  --color-hero-text: #f8fbff;
+  --color-hero-muted: #b5c4da;
+  --color-hero-panel: rgba(255, 255, 255, 0.08);
+  --color-hero-border: rgba(255, 255, 255, 0.14);
 }
 
 *, *::before, *::after {
@@ -18,24 +50,27 @@
 
 html {
   scroll-behavior: smooth;
-  background-color: #FAFAF8;
+  background-color: var(--color-bg);
 }
 
 body {
-  background-color: #FAFAF8;
-  color: #1A1A18;
+  background:
+    radial-gradient(circle at top left, rgba(14, 116, 144, 0.08), transparent 28%),
+    radial-gradient(circle at top right, rgba(255, 155, 84, 0.08), transparent 24%),
+    var(--color-bg);
+  color: var(--color-text);
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   line-height: 1.6;
 }
 
 ::selection {
-  background-color: #1C3A2F;
-  color: #FAFAF8;
+  background-color: var(--color-accent);
+  color: var(--color-hero-text);
 }
 
 :focus-visible {
-  outline: 2px solid #1C3A2F;
+  outline: 2px solid var(--color-accent);
   outline-offset: 3px;
   border-radius: 4px;
 }
@@ -44,12 +79,12 @@ body {
   width: 8px;
 }
 ::-webkit-scrollbar-track {
-  background: #F2F1EE;
+  background: var(--color-surface);
 }
 ::-webkit-scrollbar-thumb {
-  background: #C8C4BC;
+  background: #94a9c2;
   border-radius: 4px;
 }
 ::-webkit-scrollbar-thumb:hover {
-  background: #1C3A2F;
+  background: var(--color-accent);
 }

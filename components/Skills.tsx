@@ -4,9 +4,9 @@ import { useRef } from "react";
 import { motion, useInView } from "framer-motion";
 import { skillGroups } from "@/lib/data";
 import { useIsMobile } from "@/lib/hooks";
-import { Globe, Code2, Database, MapPin, Layers } from "lucide-react";
+import { Globe, BarChart2, Database, MapPin, Layers } from "lucide-react";
 
-const groupIcons = [Globe, Code2, Database, MapPin, Layers];
+const groupIcons = [BarChart2, MapPin, Globe, Database, Layers];
 
 const fadeUp = {
   hidden: { opacity: 0, y: 24 },
@@ -27,13 +27,12 @@ export default function Skills() {
       id="dovednosti"
       style={{
         padding: isMobile ? "4rem 1.25rem" : "7rem 2rem",
-        background: "#F2F1EE",
-        borderTop: "1px solid #E4E2DC",
-        borderBottom: "1px solid #E4E2DC",
+        background: "var(--color-surface)",
+        borderTop: "1px solid var(--color-border)",
+        borderBottom: "1px solid var(--color-border)",
       }}
     >
       <div style={{ maxWidth: 1200, margin: "0 auto" }} ref={ref}>
-        {/* Label */}
         <motion.p
           custom={0}
           variants={fadeUp}
@@ -41,10 +40,10 @@ export default function Skills() {
           animate={inView ? "visible" : "hidden"}
           style={{
             fontSize: "0.75rem",
-            fontWeight: 600,
+            fontWeight: 700,
             letterSpacing: "0.12em",
             textTransform: "uppercase",
-            color: "#1C3A2F",
+            color: "var(--color-accent)",
             marginBottom: "1rem",
             display: "flex",
             alignItems: "center",
@@ -56,7 +55,7 @@ export default function Skills() {
               display: "inline-block",
               width: 24,
               height: 1.5,
-              backgroundColor: "#1C3A2F",
+              backgroundColor: "var(--color-accent)",
             }}
           />
           Dovednosti
@@ -71,21 +70,38 @@ export default function Skills() {
             fontFamily: "var(--font-display), Playfair Display, Georgia, serif",
             fontSize: "clamp(2rem, 5vw, 3.25rem)",
             fontWeight: 500,
-            color: "#1A1A18",
+            color: "var(--color-text)",
             letterSpacing: "-0.02em",
-            marginBottom: "3.5rem",
-            maxWidth: "20ch",
+            marginBottom: "1rem",
+            maxWidth: "16ch",
           }}
         >
-          Co umím a s čím pracuji
+          Analytický a GIS stack
         </motion.h2>
 
-        {/* Skill groups grid */}
+        <motion.p
+          custom={2}
+          variants={fadeUp}
+          initial="hidden"
+          animate={inView ? "visible" : "hidden"}
+          style={{
+            fontSize: "1rem",
+            lineHeight: 1.75,
+            color: "var(--color-muted)",
+            maxWidth: "62ch",
+            marginBottom: "3rem",
+          }}
+        >
+          Nejbližší je mi kombinace statistiky, datové analýzy a prostorových dat.
+          Níže jsou oblasti, ve kterých mám největší jistotu a které chci dál
+          rozvíjet i profesně.
+        </motion.p>
+
         <div
           style={{
             display: "grid",
             gridTemplateColumns: "repeat(auto-fill, minmax(min(100%, 300px), 1fr))",
-            gap: "1.25rem",
+            gap: "1.1rem",
           }}
         >
           {skillGroups.map((group, i) => {
@@ -93,25 +109,24 @@ export default function Skills() {
             return (
               <motion.div
                 key={group.id}
-                custom={i + 2}
+                custom={i + 3}
                 variants={fadeUp}
                 initial="hidden"
                 animate={inView ? "visible" : "hidden"}
                 style={{
-                  background: "#FAFAF8",
-                  border: "1px solid #E4E2DC",
-                  borderRadius: 14,
+                  background: "linear-gradient(180deg, #ffffff, #f8fbff)",
+                  border: "1px solid var(--color-border)",
+                  borderRadius: 18,
                   padding: "1.75rem",
                   transition: "box-shadow 0.25s, transform 0.25s",
                   cursor: "default",
                 }}
                 whileHover={{
                   y: -3,
-                  boxShadow: "0 8px 28px rgba(28,58,47,0.1)",
-                  borderColor: "#C8D8CC",
+                  boxShadow: "0 16px 40px rgba(7,22,41,0.09)",
+                  borderColor: "var(--color-accent-border)",
                 }}
               >
-                {/* Group header */}
                 <div
                   style={{
                     display: "flex",
@@ -124,21 +139,21 @@ export default function Skills() {
                     style={{
                       width: 36,
                       height: 36,
-                      borderRadius: 8,
-                      backgroundColor: "#EBF0EC",
-                      border: "1px solid #C8D8CC",
+                      borderRadius: 10,
+                      backgroundColor: "var(--color-accent-soft)",
+                      border: "1px solid var(--color-accent-border)",
                       display: "flex",
                       alignItems: "center",
                       justifyContent: "center",
                     }}
                   >
-                    <Icon size={16} color="#1C3A2F" strokeWidth={1.75} />
+                    <Icon size={16} color="var(--color-accent)" strokeWidth={1.75} />
                   </div>
                   <h3
                     style={{
-                      fontSize: "0.9375rem",
-                      fontWeight: 600,
-                      color: "#1A1A18",
+                      fontSize: "1rem",
+                      fontWeight: 700,
+                      color: "var(--color-text)",
                       fontFamily: "DM Sans, system-ui, sans-serif",
                     }}
                   >
@@ -146,7 +161,17 @@ export default function Skills() {
                   </h3>
                 </div>
 
-                {/* Skills pills */}
+                <p
+                  style={{
+                    fontSize: "0.9rem",
+                    lineHeight: 1.65,
+                    color: "var(--color-muted)",
+                    marginBottom: "1rem",
+                  }}
+                >
+                  {group.description}
+                </p>
+
                 <div
                   style={{
                     display: "flex",
@@ -159,10 +184,10 @@ export default function Skills() {
                       key={skill}
                       style={{
                         fontSize: "0.8125rem",
-                        fontWeight: 500,
-                        color: "#4A4840",
-                        backgroundColor: "#F2F1EE",
-                        border: "1px solid #E4E2DC",
+                        fontWeight: 600,
+                        color: "var(--color-accent-strong)",
+                        backgroundColor: "var(--color-chip)",
+                        border: "1px solid var(--color-chip-border)",
                         borderRadius: 100,
                         padding: "0.3rem 0.75rem",
                         lineHeight: 1.4,

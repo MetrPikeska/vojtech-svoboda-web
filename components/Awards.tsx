@@ -21,15 +21,14 @@ export default function Awards() {
 
   return (
     <section
-      id="oceneni"
+      id="milniky"
       style={{
         padding: isMobile ? "4rem 1.25rem" : "7rem 2rem",
-        background: "#F2F1EE",
-        borderTop: "1px solid #E4E2DC",
+        background: "var(--color-surface)",
+        borderTop: "1px solid var(--color-border)",
       }}
     >
       <div style={{ maxWidth: 1200, margin: "0 auto" }} ref={ref}>
-        {/* Label */}
         <motion.p
           custom={0}
           variants={fadeUp}
@@ -37,10 +36,10 @@ export default function Awards() {
           animate={inView ? "visible" : "hidden"}
           style={{
             fontSize: "0.75rem",
-            fontWeight: 600,
+            fontWeight: 700,
             letterSpacing: "0.12em",
             textTransform: "uppercase",
-            color: "#1C3A2F",
+            color: "var(--color-accent)",
             marginBottom: "1rem",
             display: "flex",
             alignItems: "center",
@@ -52,10 +51,10 @@ export default function Awards() {
               display: "inline-block",
               width: 24,
               height: 1.5,
-              backgroundColor: "#1C3A2F",
+              backgroundColor: "var(--color-accent)",
             }}
           />
-          Ocenění & Vzdělání
+          Milníky & vzdělání
         </motion.p>
 
         <motion.h2
@@ -67,7 +66,7 @@ export default function Awards() {
             fontFamily: "var(--font-display), Playfair Display, Georgia, serif",
             fontSize: "clamp(2rem, 5vw, 3.25rem)",
             fontWeight: 500,
-            color: "#1A1A18",
+            color: "var(--color-text)",
             letterSpacing: "-0.02em",
             marginBottom: "4rem",
           }}
@@ -75,7 +74,6 @@ export default function Awards() {
           Milníky & Vzdělávání
         </motion.h2>
 
-        {/* 3-column layout */}
         <div
           style={{
             display: "grid",
@@ -83,7 +81,6 @@ export default function Awards() {
             gap: "3rem",
           }}
         >
-          {/* Awards column */}
           <motion.div
             custom={2}
             variants={fadeUp}
@@ -96,10 +93,10 @@ export default function Awards() {
                 fontWeight: 700,
                 letterSpacing: "0.1em",
                 textTransform: "uppercase",
-                color: "#8C8070",
+                color: "var(--color-warm)",
                 marginBottom: "1.75rem",
                 paddingBottom: "0.75rem",
-                borderBottom: "1px solid #E4E2DC",
+                borderBottom: "1px solid var(--color-border)",
               }}
             >
               Ocenění
@@ -133,7 +130,7 @@ export default function Awards() {
                       style={{
                         fontSize: "0.9375rem",
                         fontWeight: 600,
-                        color: "#1A1A18",
+                        color: "var(--color-text)",
                         lineHeight: 1.35,
                         marginBottom: "0.2rem",
                       }}
@@ -143,7 +140,7 @@ export default function Awards() {
                     <p
                       style={{
                         fontSize: "0.8125rem",
-                        color: "#8C8070",
+                        color: "var(--color-muted)",
                       }}
                     >
                       {award.org} · {award.year}
@@ -154,7 +151,6 @@ export default function Awards() {
             </div>
           </motion.div>
 
-          {/* Education column */}
           <motion.div
             custom={5}
             variants={fadeUp}
@@ -167,10 +163,10 @@ export default function Awards() {
                 fontWeight: 700,
                 letterSpacing: "0.1em",
                 textTransform: "uppercase",
-                color: "#8C8070",
+                color: "var(--color-warm)",
                 marginBottom: "1.75rem",
                 paddingBottom: "0.75rem",
-                borderBottom: "1px solid #E4E2DC",
+                borderBottom: "1px solid var(--color-border)",
               }}
             >
               Vzdělání
@@ -182,7 +178,6 @@ export default function Awards() {
                 position: "relative",
               }}
             >
-              {/* Vertical timeline line */}
               <div
                 aria-hidden
                 style={{
@@ -191,7 +186,7 @@ export default function Awards() {
                   top: 8,
                   bottom: 8,
                   width: 1,
-                  backgroundColor: "#E4E2DC",
+                  backgroundColor: "var(--color-border)",
                 }}
               />
 
@@ -209,17 +204,16 @@ export default function Awards() {
                     position: "relative",
                   }}
                 >
-                  {/* Timeline dot */}
                   <div
                     aria-hidden
                     style={{
                       width: 13,
                       height: 13,
                       borderRadius: "50%",
-                      backgroundColor: edu.current ? "#1C3A2F" : "#C8C4BC",
+                      backgroundColor: edu.current ? "var(--color-accent)" : "#aab6c6",
                       border: edu.current
-                        ? "2px solid #1C3A2F"
-                        : "2px solid #C8C4BC",
+                        ? "2px solid var(--color-accent)"
+                        : "2px solid #aab6c6",
                       flexShrink: 0,
                       marginTop: 4,
                       position: "relative",
@@ -231,7 +225,7 @@ export default function Awards() {
                       style={{
                         fontSize: "0.75rem",
                         fontWeight: 600,
-                        color: edu.current ? "#1C3A2F" : "#8C8070",
+                        color: edu.current ? "var(--color-accent)" : "var(--color-muted)",
                         letterSpacing: "0.04em",
                         marginBottom: "0.25rem",
                       }}
@@ -242,9 +236,9 @@ export default function Awards() {
                           style={{
                             marginLeft: "0.5rem",
                             fontSize: "0.6875rem",
-                            backgroundColor: "#EBF0EC",
-                            color: "#1C3A2F",
-                            border: "1px solid #C8D8CC",
+                            backgroundColor: "var(--color-accent-soft)",
+                            color: "var(--color-accent-strong)",
+                            border: "1px solid var(--color-accent-border)",
                             borderRadius: 100,
                             padding: "0.1rem 0.5rem",
                             fontWeight: 600,
@@ -258,13 +252,13 @@ export default function Awards() {
                       style={{
                         fontSize: "0.9375rem",
                         fontWeight: 600,
-                        color: "#1A1A18",
+                        color: "var(--color-text)",
                         marginBottom: "0.125rem",
                       }}
                     >
                       {edu.degree ? `${edu.degree} ${edu.field}` : edu.field}
                     </p>
-                    <p style={{ fontSize: "0.8125rem", color: "#8C8070" }}>
+                    <p style={{ fontSize: "0.8125rem", color: "var(--color-muted)" }}>
                       {edu.institution}
                     </p>
                   </div>
@@ -273,7 +267,6 @@ export default function Awards() {
             </div>
           </motion.div>
 
-          {/* Courses column */}
           <motion.div
             custom={9}
             variants={fadeUp}
@@ -286,10 +279,10 @@ export default function Awards() {
                 fontWeight: 700,
                 letterSpacing: "0.1em",
                 textTransform: "uppercase",
-                color: "#8C8070",
+                color: "var(--color-warm)",
                 marginBottom: "1.75rem",
                 paddingBottom: "0.75rem",
-                borderBottom: "1px solid #E4E2DC",
+                borderBottom: "1px solid var(--color-border)",
               }}
             >
               Kurzy & Mezinárodní
@@ -304,9 +297,9 @@ export default function Awards() {
                   animate={inView ? "visible" : "hidden"}
                   style={{
                     padding: "1.125rem 1.25rem",
-                    background: "#FAFAF8",
-                    border: "1px solid #E4E2DC",
-                    borderRadius: 10,
+                    background: "linear-gradient(180deg, #ffffff, #f8fbff)",
+                    border: "1px solid var(--color-border)",
+                    borderRadius: 14,
                   }}
                 >
                   <div
@@ -322,7 +315,7 @@ export default function Awards() {
                       style={{
                         fontSize: "0.875rem",
                         fontWeight: 600,
-                        color: "#1A1A18",
+                        color: "var(--color-text)",
                         lineHeight: 1.35,
                       }}
                     >
@@ -331,7 +324,7 @@ export default function Awards() {
                     <span
                       style={{
                         fontSize: "0.75rem",
-                        color: "#8C8070",
+                        color: "var(--color-muted)",
                         flexShrink: 0,
                         fontVariantNumeric: "tabular-nums",
                       }}
@@ -339,7 +332,7 @@ export default function Awards() {
                       {course.year}
                     </span>
                   </div>
-                  <p style={{ fontSize: "0.8125rem", color: "#8C8070" }}>
+                  <p style={{ fontSize: "0.8125rem", color: "var(--color-muted)" }}>
                     {course.provider}
                   </p>
                 </motion.div>

@@ -3,24 +3,24 @@
 import { useRef } from "react";
 import Image from "next/image";
 import { motion, useInView } from "framer-motion";
-import { Target, BarChart2, Brain } from "lucide-react";
+import { BarChart3, Database, Map } from "lucide-react";
 import { useIsMobile } from "@/lib/hooks";
 
 const values = [
   {
-    icon: Target,
-    label: "Přesnost",
-    desc: "Každý prostorový výstup musí obstát při kritickém pohledu.",
+    icon: BarChart3,
+    label: "Statistika",
+    desc: "Baví mě hledat vztahy v datech a převádět je do interpretovatelných závěrů.",
   },
   {
-    icon: BarChart2,
-    label: "Vizualizace",
-    desc: "Data mluví teprve tehdy, když jsou správně zobrazena.",
+    icon: Map,
+    label: "Prostorový kontext",
+    desc: "Největší smysl mi dává datová analýza ve chvíli, kdy má jasný prostorový kontext.",
   },
   {
-    icon: Brain,
-    label: "Data-driven",
-    desc: "Rozhodnutí podložená analýzou, ne intuicí.",
+    icon: Database,
+    label: "Data workflow",
+    desc: "Od přípravy dat přes databáze až po mapové a dashboardové výstupy.",
   },
 ];
 
@@ -48,12 +48,11 @@ export default function About() {
       ref={ref}
       style={{
         padding: isMobile ? "4rem 1.25rem" : "7rem 2rem",
-        background: "#FAFAF8",
+        background: "var(--color-bg)",
         maxWidth: 1200,
         margin: "0 auto",
       }}
     >
-      {/* Section label */}
       <motion.p
         custom={0}
         variants={fadeUp}
@@ -61,10 +60,10 @@ export default function About() {
         animate={inView ? "visible" : "hidden"}
         style={{
           fontSize: "0.75rem",
-          fontWeight: 600,
+          fontWeight: 700,
           letterSpacing: "0.12em",
           textTransform: "uppercase",
-          color: "#1C3A2F",
+          color: "var(--color-accent)",
           marginBottom: "1rem",
           display: "flex",
           alignItems: "center",
@@ -76,7 +75,7 @@ export default function About() {
             display: "inline-block",
             width: 24,
             height: 1.5,
-            backgroundColor: "#1C3A2F",
+            backgroundColor: "var(--color-accent)",
           }}
         />
         O mně
@@ -90,7 +89,6 @@ export default function About() {
           alignItems: "start",
         }}
       >
-        {/* Photo + text */}
         <div>
           <motion.div
             custom={1}
@@ -110,10 +108,10 @@ export default function About() {
                 height: 96,
                 borderRadius: "50%",
                 flexShrink: 0,
-                border: "2px solid #D4DDD6",
+                border: "2px solid var(--color-accent-border)",
                 position: "relative",
                 overflow: "hidden",
-                background: "#EBF0EC",
+                background: "var(--color-accent-soft)",
               }}
             >
               <Image
@@ -131,15 +129,15 @@ export default function About() {
                   fontFamily: "var(--font-display), Playfair Display, Georgia, serif",
                   fontSize: "clamp(1.75rem, 4vw, 2.5rem)",
                   fontWeight: 500,
-                  color: "#1A1A18",
+                  color: "var(--color-text)",
                   letterSpacing: "-0.02em",
                   marginBottom: "0.25rem",
                 }}
               >
                 Vojtěch Svoboda
               </h2>
-              <p style={{ fontSize: "0.875rem", color: "#6B6860" }}>
-                MSc Geoinformatika · UPOL Olomouc
+              <p style={{ fontSize: "0.875rem", color: "var(--color-muted)" }}>
+                Mgr. Geoinformatika a kartografie · UPOL Olomouc
               </p>
             </div>
           </motion.div>
@@ -152,16 +150,20 @@ export default function About() {
             style={{
               fontSize: "1rem",
               lineHeight: 1.8,
-              color: "#4A4840",
+              color: "var(--color-muted)",
               maxWidth: "58ch",
             }}
           >
-            Jsem student magisterského programu{" "}
-            <strong style={{ color: "#1A1A18", fontWeight: 600 }}>
-              Geoinformatika a Kartografie
+            Jsem studentem magisterského programu{" "}
+            <strong style={{ color: "var(--color-text)", fontWeight: 700 }}>
+              Geoinformatika a kartografie
             </strong>{" "}
-            na Palackého univerzitě v Olomouci. Specializuji se na prostorovou
-            statistiku, analýzu geodat a tvorbu kartografických výstupů.
+            na Univerzitě Palackého v Olomouci. Nejvíc mě táhne statistika a
+            datová analýza v Pythonu, kde pracuji hlavně s balíčky jako{" "}
+            <strong style={{ color: "var(--color-text)", fontWeight: 700 }}>
+              pandas, geopandas a matplotlib
+            </strong>
+            .
           </motion.p>
 
           <motion.p
@@ -172,23 +174,48 @@ export default function About() {
             style={{
               fontSize: "1rem",
               lineHeight: 1.8,
-              color: "#4A4840",
+              color: "var(--color-muted)",
               maxWidth: "58ch",
               marginTop: "1rem",
             }}
           >
-            Svou bakalářskou prací o distribuci populace z dat mobilních
-            operátorů jsem získal{" "}
-            <strong style={{ color: "#1C3A2F", fontWeight: 600 }}>
-              1.&nbsp;místo v soutěži GISáček
+            Tenhle analytický směr jsem rozvíjel i v bakalářské práci a dalších
+            akademických projektech. Dlouhodobě se chci věnovat oblastem, kde se
+            potkává{" "}
+            <strong style={{ color: "var(--color-accent-strong)", fontWeight: 700 }}>
+              datová analýza s prostorovými daty
             </strong>{" "}
-            na VŠB–TUO Ostrava. Mimo akademickou půdu obchoduji na finančních
-            trzích a pracuji jako správce video obsahu ve fotbalové analytické
-            firmě.
+            — od demografie a mobility po aplikovanou prostorovou statistiku. Právě
+            za práci s mobilními daty jsem získal{" "}
+            <strong style={{ color: "var(--color-accent)", fontWeight: 700 }}>
+              1. místo v soutěži GISáček
+            </strong>{" "}
+            na VŠB–TUO Ostrava.
+          </motion.p>
+
+          <motion.p
+            custom={4}
+            variants={fadeUp}
+            initial="hidden"
+            animate={inView ? "visible" : "hidden"}
+            style={{
+              fontSize: "1rem",
+              lineHeight: 1.8,
+              color: "var(--color-muted)",
+              maxWidth: "58ch",
+              marginTop: "1rem",
+            }}
+          >
+            Vedle analýzy mám zkušenost i se{" "}
+            <strong style={{ color: "var(--color-text)", fontWeight: 700 }}>
+              SQL, PostgreSQL, návrhem databází a prostorovými databázemi
+            </strong>
+            . V GISu stojím hlavně na ArcGIS Pro, ArcGIS Online, tematické
+            kartografii a pokročilejší vizualizaci; QGIS používám v základu. Mimo
+            školu mě formuje i trading, správa dat a práce s video obsahem.
           </motion.p>
         </div>
 
-        {/* Values */}
         <div
           style={{
             display: "flex",
@@ -202,7 +229,7 @@ export default function About() {
             return (
               <motion.div
                 key={v.label}
-                custom={i + 4}
+                custom={i + 5}
                 variants={fadeUp}
                 initial="hidden"
                 animate={inView ? "visible" : "hidden"}
@@ -211,9 +238,10 @@ export default function About() {
                   gap: "1.25rem",
                   alignItems: "flex-start",
                   padding: "1.5rem",
-                  borderRadius: 12,
-                  background: "#F2F1EE",
-                  border: "1px solid #E4E2DC",
+                  borderRadius: 18,
+                  background: "linear-gradient(180deg, #ffffff, var(--color-surface))",
+                  border: "1px solid var(--color-border)",
+                  boxShadow: "0 16px 40px rgba(7,22,41,0.06)",
                 }}
               >
                 <div
@@ -221,28 +249,34 @@ export default function About() {
                     width: 40,
                     height: 40,
                     borderRadius: 10,
-                    backgroundColor: "#EBF0EC",
-                    border: "1px solid #C8D8CC",
+                    backgroundColor: "var(--color-accent-soft)",
+                    border: "1px solid var(--color-accent-border)",
                     display: "flex",
                     alignItems: "center",
                     justifyContent: "center",
                     flexShrink: 0,
                   }}
                 >
-                  <Icon size={18} color="#1C3A2F" strokeWidth={1.75} />
+                  <Icon size={18} color="var(--color-accent)" strokeWidth={1.75} />
                 </div>
                 <div>
                   <p
                     style={{
                       fontSize: "0.9375rem",
-                      fontWeight: 600,
-                      color: "#1A1A18",
+                      fontWeight: 700,
+                      color: "var(--color-text)",
                       marginBottom: "0.25rem",
                     }}
                   >
                     {v.label}
                   </p>
-                  <p style={{ fontSize: "0.875rem", color: "#6B6860", lineHeight: 1.6 }}>
+                  <p
+                    style={{
+                      fontSize: "0.875rem",
+                      color: "var(--color-muted)",
+                      lineHeight: 1.6,
+                    }}
+                  >
                     {v.desc}
                   </p>
                 </div>

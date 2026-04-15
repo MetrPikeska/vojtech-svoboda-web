@@ -4,7 +4,7 @@ import "./globals.css";
 
 const playfair = Playfair_Display({
   variable: "--font-display",
-  subsets: ["latin"],
+  subsets: ["latin", "latin-ext"],
   weight: ["400", "500", "600"],
   style: ["normal", "italic"],
   display: "swap",
@@ -12,30 +12,33 @@ const playfair = Playfair_Display({
 
 const dmSans = DM_Sans({
   variable: "--font-body",
-  subsets: ["latin"],
+  subsets: ["latin", "latin-ext"],
   weight: ["300", "400", "500", "600"],
   display: "swap",
 });
 
 export const metadata: Metadata = {
-  title: "Vojtěch Svoboda — Geoinformatik & Datový analytik",
+  title: "Vojtěch Svoboda | Prostorová data a datová analýza",
   description:
-    "MSc student geoinformatiky na UPOL. Pracuji s prostorovými daty, GIS analýzou a kartografickou vizualizací. Hledám zajímavé projekty a spolupráci.",
+    "Student geoinformatiky na UPOL se zaměřením na statistiku, datovou analýzu v Pythonu, prostorová data, GIS a kartografickou vizualizaci.",
   keywords: [
     "geoinformatika",
     "GIS",
     "kartografie",
     "prostorová data",
     "ArcGIS",
+    "ArcGIS Online",
     "QGIS",
     "Python",
-    "data analytics",
+    "spatial statistics",
+    "PostgreSQL",
+    "data analysis",
   ],
   authors: [{ name: "Vojtěch Svoboda" }],
   openGraph: {
-    title: "Vojtěch Svoboda — Geoinformatik & Datový analytik",
+    title: "Vojtěch Svoboda | Prostorová data a datová analýza",
     description:
-      "MSc student geoinformatiky na UPOL. Prostorová data, GIS analýza a kartografická vizualizace.",
+      "Statistika, datová analýza v Pythonu, prostorová data, GIS a kartografie.",
     type: "website",
     locale: "cs_CZ",
   },

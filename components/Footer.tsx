@@ -5,8 +5,8 @@ export default function Footer() {
   return (
     <footer
       style={{
-        background: "#141F1A",
-        borderTop: "1px solid rgba(255,255,255,0.06)",
+        background: "#081425",
+        borderTop: "1px solid rgba(255,255,255,0.08)",
         padding: "2rem",
       }}
     >
@@ -24,7 +24,7 @@ export default function Footer() {
         <p
           style={{
             fontSize: "0.8125rem",
-            color: "#4A6050",
+            color: "rgba(248,251,255,0.56)",
             letterSpacing: "0.02em",
           }}
         >
@@ -36,22 +36,27 @@ export default function Footer() {
             href="mailto:vojttas@gmail.com"
             style={{
               fontSize: "0.8125rem",
-              color: "#4A6050",
+              color: "rgba(248,251,255,0.56)",
               textDecoration: "none",
               transition: "color 0.2s",
             }}
             onMouseEnter={(e) =>
-              ((e.target as HTMLElement).style.color = "#A8D4BA")
+              ((e.target as HTMLElement).style.color = "var(--color-highlight)")
             }
             onMouseLeave={(e) =>
-              ((e.target as HTMLElement).style.color = "#4A6050")
+              ((e.target as HTMLElement).style.color = "rgba(248,251,255,0.56)")
             }
           >
             vojttas@gmail.com
           </a>
           <span
             aria-hidden
-            style={{ width: 3, height: 3, borderRadius: "50%", backgroundColor: "#4A6050" }}
+            style={{
+              width: 3,
+              height: 3,
+              borderRadius: "50%",
+              backgroundColor: "rgba(248,251,255,0.3)",
+            }}
           />
           <a
             href="https://www.linkedin.com/in/vojt%C4%9Bch-svoboda-623956266/"
@@ -59,22 +64,27 @@ export default function Footer() {
             rel="noopener noreferrer"
             style={{
               fontSize: "0.8125rem",
-              color: "#4A6050",
+              color: "rgba(248,251,255,0.56)",
               textDecoration: "none",
               transition: "color 0.2s",
             }}
             onMouseEnter={(e) =>
-              ((e.target as HTMLElement).style.color = "#A8D4BA")
+              ((e.target as HTMLElement).style.color = "var(--color-highlight)")
             }
             onMouseLeave={(e) =>
-              ((e.target as HTMLElement).style.color = "#4A6050")
+              ((e.target as HTMLElement).style.color = "rgba(248,251,255,0.56)")
             }
           >
             LinkedIn
           </a>
           <span
             aria-hidden
-            style={{ width: 3, height: 3, borderRadius: "50%", backgroundColor: "#4A6050" }}
+            style={{
+              width: 3,
+              height: 3,
+              borderRadius: "50%",
+              backgroundColor: "rgba(248,251,255,0.3)",
+            }}
           />
           <a
             href="https://github.com/SvobVojtech"
@@ -82,15 +92,15 @@ export default function Footer() {
             rel="noopener noreferrer"
             style={{
               fontSize: "0.8125rem",
-              color: "#4A6050",
+              color: "rgba(248,251,255,0.56)",
               textDecoration: "none",
               transition: "color 0.2s",
             }}
             onMouseEnter={(e) =>
-              ((e.target as HTMLElement).style.color = "#A8D4BA")
+              ((e.target as HTMLElement).style.color = "var(--color-highlight)")
             }
             onMouseLeave={(e) =>
-              ((e.target as HTMLElement).style.color = "#4A6050")
+              ((e.target as HTMLElement).style.color = "rgba(248,251,255,0.56)")
             }
           >
             GitHub
