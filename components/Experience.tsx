@@ -211,9 +211,9 @@ export default function Experience() {
                       style={{
                         fontSize: "0.75rem",
                         fontWeight: 600,
-                        color: "var(--color-accent-strong)",
+                        color: "var(--color-highlight)",
                         background: "var(--color-chip)",
-                        border: "1px solid var(--color-chip-border)",
+                        border: "1px solid var(--color-accent)",
                         borderRadius: 999,
                         padding: "0.28rem 0.7rem",
                       }}

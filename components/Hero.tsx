@@ -42,7 +42,7 @@ export default function Hero() {
         display: "flex",
         alignItems: "center",
         background:
-          "linear-gradient(135deg, var(--color-hero) 0%, #0d1f38 55%, #0a1428 100%)",
+          "linear-gradient(135deg, var(--color-hero) 0%, #0a1220 55%, #0f1319 100%)",
         overflow: "hidden",
       }}
     >
@@ -54,7 +54,7 @@ export default function Hero() {
           position: "absolute",
           inset: 0,
           background:
-            "radial-gradient(circle at 18% 22%, rgba(8, 184, 175, 0.12), transparent 22%), radial-gradient(circle at 82% 18%, rgba(8, 184, 175, 0.1), transparent 24%), radial-gradient(ellipse 80% 80% at 50% 50%, transparent 40%, rgba(10, 20, 40, 0.6) 100%)",
+            "radial-gradient(circle at 18% 22%, rgba(59, 130, 246, 0.1), transparent 22%), radial-gradient(circle at 82% 18%, rgba(59, 130, 246, 0.08), transparent 24%), radial-gradient(ellipse 80% 80% at 50% 50%, transparent 40%, rgba(10, 15, 31, 0.5) 100%)",
           pointerEvents: "none",
         }}
       />

@@ -185,9 +185,9 @@ export default function Skills() {
                       style={{
                         fontSize: "0.8125rem",
                         fontWeight: 600,
-                        color: "var(--color-accent-strong)",
+                        color: "var(--color-highlight)",
                         backgroundColor: "var(--color-chip)",
-                        border: "1px solid var(--color-chip-border)",
+                        border: "1px solid var(--color-accent)",
                         borderRadius: 100,
                         padding: "0.3rem 0.75rem",
                         lineHeight: 1.4,

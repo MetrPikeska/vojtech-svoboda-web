@@ -182,7 +182,7 @@ export default function About() {
             Tenhle analytický směr jsem rozvíjel i v bakalářské práci a dalších
             akademických projektech. Dlouhodobě se chci věnovat oblastem, kde se
             potkává{" "}
-            <strong style={{ color: "var(--color-accent-strong)", fontWeight: 700 }}>
+            <strong style={{ color: "var(--color-highlight)", fontWeight: 700 }}>
               datová analýza s prostorovými daty
             </strong>{" "}
             — od demografie a mobility po aplikovanou prostorovou statistiku. Právě

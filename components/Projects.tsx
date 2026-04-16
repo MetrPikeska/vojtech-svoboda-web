@@ -249,13 +249,13 @@ function ProjectCard({
               alignItems: "center",
               gap: "0.4rem",
               marginTop: "1rem",
-              backgroundColor: "var(--color-accent-soft)",
-              border: "1px solid var(--color-accent-border)",
+              backgroundColor: "var(--color-chip)",
+              border: "1px solid var(--color-accent)",
               borderRadius: 100,
               padding: "0.35rem 0.875rem",
               fontSize: "0.8125rem",
               fontWeight: 600,
-              color: "var(--color-accent-strong)",
+              color: "var(--color-highlight)",
             }}
           >
             {project.award}
@@ -271,13 +271,13 @@ function ProjectCard({
               alignItems: "center",
               gap: "0.4rem",
               marginBottom: "0.75rem",
-              backgroundColor: "var(--color-accent-soft)",
-              border: "1px solid var(--color-accent-border)",
+              backgroundColor: "var(--color-chip)",
+              border: "1px solid var(--color-accent)",
               borderRadius: 100,
               padding: "0.3rem 0.75rem",
               fontSize: "0.75rem",
               fontWeight: 600,
-              color: "var(--color-accent-strong)",
+              color: "var(--color-highlight)",
             }}
           >
             {project.award}
@@ -313,7 +313,7 @@ function ProjectCard({
             style={{
               fontSize: "0.8125rem",
               fontWeight: 600,
-              color: "var(--color-accent-strong)",
+              color: "var(--color-highlight)",
               marginBottom: "1rem",
             }}
           >
@@ -335,9 +335,9 @@ function ProjectCard({
               style={{
                 fontSize: "0.75rem",
                 fontWeight: 600,
-                color: "var(--color-accent-strong)",
+                color: "var(--color-highlight)",
                 backgroundColor: "var(--color-chip)",
-                border: "1px solid var(--color-chip-border)",
+                border: "1px solid var(--color-accent)",
                 borderRadius: 999,
                 padding: "0.2rem 0.6rem",
                 letterSpacing: "0.01em",
@@ -363,9 +363,9 @@ function ProjectCard({
                   gap: "0.3rem",
                   fontSize: "0.8125rem",
                   fontWeight: 600,
-                  color: "var(--color-accent-strong)",
-                  backgroundColor: "var(--color-accent-soft)",
-                  border: "1px solid var(--color-accent-border)",
+                  color: "var(--color-highlight)",
+                  backgroundColor: "var(--color-chip)",
+                  border: "1px solid var(--color-accent)",
                   borderRadius: 999,
                   padding: "0.35rem 0.75rem",
                   textDecoration: "none",

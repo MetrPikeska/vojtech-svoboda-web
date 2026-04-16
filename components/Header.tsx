@@ -48,11 +48,11 @@ export default function Header() {
         right: 0,
         zIndex: 50,
         transition: "background 0.3s, box-shadow 0.3s, border-color 0.3s",
-        background: solidBg ? "rgba(244,247,251,0.92)" : "transparent",
+        background: solidBg ? "rgba(15, 19, 25, 0.97)" : "transparent",
         backdropFilter: solidBg ? "blur(12px)" : "none",
         WebkitBackdropFilter: solidBg ? "blur(12px)" : "none",
         borderBottom: scrolled ? "1px solid var(--color-border)" : "1px solid transparent",
-        boxShadow: scrolled ? "0 10px 30px rgba(10, 20, 40, 0.1)" : "none",
+        boxShadow: scrolled ? "0 10px 30px rgba(15, 19, 25, 0.2)" : "none",
       }}
     >
       <div

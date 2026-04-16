@@ -236,9 +236,9 @@ export default function Awards() {
                           style={{
                             marginLeft: "0.5rem",
                             fontSize: "0.6875rem",
-                            backgroundColor: "var(--color-accent-soft)",
-                            color: "var(--color-accent-strong)",
-                            border: "1px solid var(--color-accent-border)",
+                            backgroundColor: "var(--color-chip)",
+                            color: "var(--color-highlight)",
+                            border: "1px solid var(--color-accent)",
                             borderRadius: 100,
                             padding: "0.1rem 0.5rem",
                             fontWeight: 600,

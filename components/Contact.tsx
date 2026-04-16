@@ -50,7 +50,7 @@ export default function Contact() {
       style={{
         padding: isMobile ? "4rem 1.25rem" : "7rem 2rem",
         background:
-          "linear-gradient(135deg, var(--color-hero) 0%, #0d1f38 60%, #0a1428 100%)",
+          "linear-gradient(135deg, var(--color-hero) 0%, #0a1220 60%, #0f1319 100%)",
         position: "relative",
         overflow: "hidden",
       }}
