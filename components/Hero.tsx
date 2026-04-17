@@ -6,19 +6,19 @@ import { useIsMobile } from "@/lib/hooks";
 
 const focusCards = [
   {
-    label: "Pythonový stack",
-    title: "pandas, geopandas, matplotlib",
-    desc: "Datová příprava, explorace a převod výsledků do čitelných výstupů.",
+    label: "Prostorová data",
+    title: "geodata, atributy, prostorové souvislosti",
+    desc: "Pracuji s daty, u kterých je klíčové nejen co říkají, ale i kde se odehrávají.",
   },
   {
-    label: "Prostorové metody",
-    title: "ESDA, shlukování, autokorelace",
-    desc: "Baví mě chvíle, kdy data dávají smysl až po doplnění o prostorový kontext.",
+    label: "Datová analýza",
+    title: "Python, vizualizace, regrese",
+    desc: "Věnuji se přípravě dat, exploraci, vizualizaci i modelům, které pomáhají výsledky dobře interpretovat.",
   },
   {
-    label: "GIS & databáze",
-    title: "ArcGIS Pro, SQL, PostgreSQL",
-    desc: "K analýze přidávám GIS workflow, práci s databázemi a publikaci výstupů.",
+    label: "GIS",
+    title: "ArcGIS Pro, ArcGIS Online, StoryMaps",
+    desc: "Analytické výstupy převádím do map, dashboardů a srozumitelných GIS prezentací.",
   },
 ];
 
@@ -101,7 +101,7 @@ export default function Hero() {
                 flexShrink: 0,
               }}
             />
-            Statistika · Python · Prostorová data
+            Prostorová data · Datová analýza · GIS
           </motion.p>
 
           <motion.h1
@@ -137,9 +137,9 @@ export default function Hero() {
               marginBottom: "3rem",
             }}
           >
-            Nejvíc mě baví statistika a datová analýza v Pythonu, hlavně ve chvíli,
-            kdy se propojí s GISem, mobilními daty a prostorovým kontextem. Právě v
-            tom vidím svou přidanou hodnotu a směr, kterému se chci dál věnovat.
+            Hlavní těžiště mám v datové analýze propojené s prostorovými daty. V
+            Pythonu řeším zpracování, vizualizaci a modelování dat, v GISu pak jejich
+            prostorovou interpretaci a převod do přehledných výstupů.
           </motion.p>
 
           <motion.div

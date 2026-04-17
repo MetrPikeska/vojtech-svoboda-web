@@ -9,18 +9,18 @@ import { useIsMobile } from "@/lib/hooks";
 const values = [
   {
     icon: BarChart3,
-    label: "Statistika",
-    desc: "Baví mě hledat vztahy v datech a převádět je do interpretovatelných závěrů.",
+    label: "Prostorová data",
+    desc: "Nejvíc mě zajímá práce s daty, která dávají smysl až ve chvíli, kdy je čtu i v prostoru.",
   },
   {
     icon: Map,
-    label: "Prostorový kontext",
-    desc: "Největší smysl mi dává datová analýza ve chvíli, kdy má jasný prostorový kontext.",
+    label: "Datová analýza",
+    desc: "Baví mě čistit data, zkoumat vztahy, vizualizovat výsledky a hledat v nich čitelný příběh.",
   },
   {
     icon: Database,
-    label: "Data workflow",
-    desc: "Od přípravy dat přes databáze až po mapové a dashboardové výstupy.",
+    label: "GIS",
+    desc: "Na analýzu navazuji GIS workflow, kartografií a publikací výsledků do mapových výstupů.",
   },
 ];
 
@@ -137,7 +137,7 @@ export default function About() {
                 Vojtěch Svoboda
               </h2>
               <p style={{ fontSize: "0.875rem", color: "var(--color-muted)" }}>
-                Mgr. Geoinformatika a kartografie · UPOL Olomouc
+                Student magisterského oboru Geoinformatika a kartografie · UPOL Olomouc
               </p>
             </div>
           </motion.div>
@@ -158,12 +158,13 @@ export default function About() {
             <strong style={{ color: "var(--color-text)", fontWeight: 700 }}>
               Geoinformatika a kartografie
             </strong>{" "}
-            na Univerzitě Palackého v Olomouci. Nejvíc mě táhne statistika a
-            datová analýza v Pythonu, kde pracuji hlavně s balíčky jako{" "}
+            na Univerzitě Palackého v Olomouci. Nejvíc mě táhne datová analýza ve
+            spojení s prostorovými daty, kde pracuji hlavně s balíčky jako{" "}
             <strong style={{ color: "var(--color-text)", fontWeight: 700 }}>
               pandas, geopandas a matplotlib
             </strong>
-            .
+            , případně s dalšími nástroji pro zpracování, vizualizaci a základní
+            modelování dat.
           </motion.p>
 
           <motion.p
@@ -185,8 +186,8 @@ export default function About() {
             <strong style={{ color: "var(--color-highlight)", fontWeight: 700 }}>
               datová analýza s prostorovými daty
             </strong>{" "}
-            — od demografie a mobility po aplikovanou prostorovou statistiku. Právě
-            za práci s mobilními daty jsem získal{" "}
+            — od explorace a modelování až po kartografickou interpretaci výsledků.
+            Právě za práci s mobilními daty v bakalářské práci jsem získal{" "}
             <strong style={{ color: "var(--color-accent)", fontWeight: 700 }}>
               1. místo v soutěži GISáček
             </strong>{" "}
@@ -211,8 +212,8 @@ export default function About() {
               SQL, PostgreSQL, návrhem databází a prostorovými databázemi
             </strong>
             . V GISu stojím hlavně na ArcGIS Pro, ArcGIS Online, tematické
-            kartografii a pokročilejší vizualizaci; QGIS používám v základu. Mimo
-            školu mě formuje i trading, správa dat a práce s video obsahem.
+            kartografii a vizualizaci analytických výstupů. Mimo školu mě formuje i
+            trading, správa dat a práce s video obsahem.
           </motion.p>
         </div>
 

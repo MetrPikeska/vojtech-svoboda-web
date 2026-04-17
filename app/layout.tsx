@@ -19,7 +19,7 @@ const bodyFont = Inter({
 export const metadata: Metadata = {
   title: "Vojtěch Svoboda | Prostorová data a datová analýza",
   description:
-    "Student geoinformatiky na UPOL se zaměřením na statistiku, datovou analýzu v Pythonu, prostorová data, GIS a kartografickou vizualizaci.",
+    "Student magisterského oboru geoinformatiky na UPOL se zaměřením na datovou analýzu, prostorová data, GIS a kartografickou interpretaci výsledků.",
   keywords: [
     "geoinformatika",
     "GIS",
@@ -33,11 +33,15 @@ export const metadata: Metadata = {
     "PostgreSQL",
     "data analysis",
   ],
+  icons: {
+    icon: "/icon",
+    shortcut: "/icon",
+  },
   authors: [{ name: "Vojtěch Svoboda" }],
   openGraph: {
     title: "Vojtěch Svoboda | Prostorová data a datová analýza",
     description:
-      "Statistika, datová analýza v Pythonu, prostorová data, GIS a kartografie.",
+      "Datová analýza v Pythonu, prostorová data, GIS a kartografická interpretace výsledků.",
     type: "website",
     locale: "cs_CZ",
   },

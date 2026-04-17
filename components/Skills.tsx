@@ -4,9 +4,9 @@ import { useRef } from "react";
 import { motion, useInView } from "framer-motion";
 import { skillGroups } from "@/lib/data";
 import { useIsMobile } from "@/lib/hooks";
-import { Globe, BarChart2, Database, MapPin, Layers } from "lucide-react";
+import { Globe, BarChart2, Database, MapPin, Layers, Briefcase } from "lucide-react";
 
-const groupIcons = [BarChart2, MapPin, Globe, Database, Layers];
+const groupIcons = [MapPin, BarChart2, Globe, Layers, Database, Briefcase];
 
 const fadeUp = {
   hidden: { opacity: 0, y: 24 },
@@ -76,7 +76,7 @@ export default function Skills() {
             maxWidth: "16ch",
           }}
         >
-          Analytický a GIS stack
+          Prostorová data, analýza a GIS
         </motion.h2>
 
         <motion.p
@@ -92,9 +92,9 @@ export default function Skills() {
             marginBottom: "3rem",
           }}
         >
-          Nejbližší je mi kombinace statistiky, datové analýzy a prostorových dat.
-          Níže jsou oblasti, ve kterých mám největší jistotu a které chci dál
-          rozvíjet i profesně.
+          Nejvíc mě zajímá spojení datové analýzy, prostorových dat a GIS. Níže jsou
+          oblasti, ve kterých dnes stojím nejpevněji a které chci dál rozvíjet i
+          profesně.
         </motion.p>
 
         <div

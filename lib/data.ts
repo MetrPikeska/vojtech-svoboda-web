@@ -42,7 +42,7 @@ export const projects = [
       "Tematická kartografie demografických ukazatelů se zaměřením na prostorové vzorce rodinného stavu v Česku.",
     details:
       "Součástí byla příprava dat, volba klasifikačních metod, návrh více mapových kompozic a interpretace regionálních rozdílů.",
-    tags: ["QGIS", "Demografie", "Tematická kartografie", "Vizualizace"],
+    tags: ["ArcGIS Pro", "Demografie", "Tematická kartografie", "Vizualizace"],
     href: null,
     links: null,
     note: "PDF projektu je k dispozici na vyžádání.",
@@ -87,38 +87,38 @@ export const projects = [
 
 export const skillGroups = [
   {
-    id: "statistics",
-    label: "Statistika & datová analýza",
+    id: "spatial-data",
+    label: "Prostorová data",
     description:
-      "Nejvíc mě baví hledat vzorce v datech, čistit je, testovat hypotézy a převádět výsledky do interpretovatelných výstupů.",
+      "Zajímá mě práce s geodaty v širším datovém kontextu: příprava vrstev, práce s atributy, spojování dat a hledání prostorových souvislostí.",
     skills: [
-      "Python",
-      "pandas",
       "geopandas",
-      "matplotlib",
-      "explorační analýza",
-      "tvorba indikátorů",
+      "geodata",
+      "prostorové joiny",
+      "atributová práce",
+      "interpretace územních vzorců",
+      "příprava dat",
     ],
   },
   {
-    id: "spatial-analysis",
-    label: "Prostorová analýza",
+    id: "data-analysis",
+    label: "Datová analýza",
     description:
-      "Pracuji s metodami, kde je prostorový kontext klíčový: od prostorové autokorelace přes shlukování až po analýzu mobilních dat.",
+      "V Pythonu se věnuji zpracování dat, exploraci, vizualizaci a modelování tak, aby z dat vznikl čitelný analytický výstup.",
     skills: [
-      "prostorová statistika",
-      "ESDA",
-      "shlukování",
-      "prostorová autokorelace",
-      "analýza mobilních dat",
-      "interpretace výsledků",
+      "Python",
+      "pandas",
+      "matplotlib",
+      "explorační analýza",
+      "regrese",
+      "vizualizace dat",
     ],
   },
   {
     id: "gis",
-    label: "GIS & kartografie",
+    label: "GIS",
     description:
-      "Nejčastěji pracuji v ArcGIS Pro, umím ArcGIS Online a StoryMaps, QGIS používám v základu a baví mě tematická kartografie i pokročilejší vizualizace.",
+      "Na analytickou část navazuji GIS workflow, kartografickou interpretací a publikací výstupů v desktopovém i webovém prostředí.",
     skills: [
       "ArcGIS Pro",
       "ArcGIS Online",
@@ -129,10 +129,24 @@ export const skillGroups = [
     ],
   },
   {
+    id: "spatial-methods",
+    label: "Prostorové metody",
+    description:
+      "Baví mě metody, kde prostor není jen kulisa, ale přímo součást analýzy. Nejblíž mám ESDA, shlukovým metodám a prostorovému modelování.",
+    skills: [
+      "ESDA",
+      "shlukové metody",
+      "prostorové modelování",
+      "regrese a korelace",
+      "PCA",
+      "data mining",
+    ],
+  },
+  {
     id: "databases",
     label: "Databáze & správa dat",
     description:
-      "Ve škole jsme řešili SQL, PostgreSQL, návrh databází i prostorové databáze. Důležitá je pro mě i kvalita dat a dobře navržený workflow.",
+      "Vedle samotné analýzy je pro mě důležitá i struktura dat, kvalita datových zdrojů a dobře navržený workflow.",
     skills: [
       "SQL",
       "PostgreSQL",
@@ -223,6 +237,11 @@ export const education = [
 ];
 
 export const courses = [
+  {
+    year: 2025,
+    title: "ProTrader certifikát",
+    provider: "Fintokei",
+  },
   {
     year: 2025,
     title: "Spatial Analysis in ArcGIS Pro",

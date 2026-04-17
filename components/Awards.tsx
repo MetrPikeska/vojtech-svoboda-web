@@ -71,7 +71,7 @@ export default function Awards() {
             marginBottom: "4rem",
           }}
         >
-          Milníky & Vzdělávání
+          Milníky & vzdělání
         </motion.h2>
 
         <div
@@ -285,7 +285,7 @@ export default function Awards() {
                 borderBottom: "1px solid var(--color-border)",
               }}
             >
-              Kurzy & Mezinárodní
+              Kurzy & certifikáty
             </h3>
             <div style={{ display: "flex", flexDirection: "column", gap: "1rem" }}>
               {courses.map((course, i) => (
